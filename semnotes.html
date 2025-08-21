@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<title>Notes by Branch & Semester</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header / Navbar -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Homepage">
+        <img src="https://images.unsplash.com/vector-1754910720009-ed5efafee03f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8fA%3D%3D" alt="Logo placeholder" />
+        <span href="index.html" class="brand">Engineering walle</span>
+      </a>
+<div class="cta-group">
+        <a class="btn btn-outline" href="loginsignup.html">Login</a>
+      </div>
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" aria-label="Open navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
+      <nav class="main-nav" role="navigation" aria-label="Main Navigation">
+          
+        <!-- Cut/Close button -->
+        <button class="nav-close" aria-label="Close navigation">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="notice.html"><i class="fas fa-copy"></i> Notices</a></li>
+          <li><a href="jceceb.html"><i class="fas fa-pen"></i> Entrance Exam</a></li>
+          <li><a href="semnotes.html"><i class="fas fa-book"></i> Semesters Notes</a></li>
+          <li><a href="colleges.html"><i class="fas fa-university"></i> Govt. Colleges</a></li>
+          <li><a href="roadmaps.html"><i class="fas fa-map"></i> Career Roadmaps</a></li>
+          <li><a href="Quiz.html"><i class="fas fa-brain"></i> Quiz Center</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Overlay -->
+  <div class="nav-overlay"></div>  
+  
+<div class="notesbranchescontainer">
+    <h2>Select Branch</h2>
+    <ul class="list" id="branchList">
+    <li onclick="showSemesters('CSE')"><i class="fas fa-laptop-code"></i> Computer Science & Engineering</li>
+    <li onclick="showSemesters('ME')"><i class="fas fa-cogs"></i> Mechanical Engineering</li>
+    <li onclick="showSemesters('EE')"><i class="fas fa-bolt"></i> Electrical Engineering</li>
+    <li onclick="showSemesters('ECE')"><i class="fas fa-satellite-dish"></i>Electronics & Commu. Engineering</li>
+    <li onclick="showSemesters('CE')"><i class="fas fa-drafting-compass"></i> Civil Engineering</li>
+    <li onclick="showSemesters('CHE')"><i class="fas fa-flask"></i> Chemical Engineering</li>
+    <li onclick="showSemesters('IT')"><i class="fas fa-network-wired"></i> Information Technology</li>
+    <li onclick="showSemesters('AE')"><i class="fas fa-plane"></i> Aeronautical Engineering</li>
+    <li onclick="showSemesters('MIN')"><i class="fas fa-hard-hat"></i> Mining Engineering</li>
+    <li onclick="showSemesters('PT')"><i class="fas fa-industry"></i> Production Technology</li>
+    </ul>
+
+    <div id="semesterSection" class="hidden fade">
+        <span class="back-btn" onclick="goBack('branch')"><i class="fa fa-long-arrow-alt-left" aria-hidden="true"> 𝗕𝗮𝗰𝗸 𝘁𝗼 𝗕𝗿𝗮𝗻𝗰𝗵𝗲𝘀</i></span>
+        <h2 id="branchTitle"></h2>
+        <ul class="list" id="semesterList"></ul>
+    </div>
+
+    <div id="notesSection" class="hidden fade">
+        <span class="back-btn" onclick="goBack('semester')"><i class="fa fa-long-arrow-alt-left" aria-hidden="true"> 𝗕𝗮𝗰𝗸 𝘁𝗼 𝗦𝗲𝗺𝗲𝘀𝘁𝗲𝗿𝘀</i></span>
+        <h2 id="semesterTitle"></h2>
+        <ul class="list" id="notesList"></ul>
+    </div>
+</div>
+  <!-- Footer -->
+  
+  <footer class="footer">
+  <div class="footer-left"> 
+    <div class="footer-links">
+        <hr>
+      <a href="disclaimer.html">Disclaimer</a>
+      <hr>
+      <a href="privacy-security.html">Privacy & Security</a>
+      <hr>
+      <a href="about-us.html">About Us</a>
+      <hr> 
+      <a href="https://sumit-mahato-07.github.io/Portfolio/">About founder</a>
+      <hr>
+    </div>
+    
+    <hr>
+    <p>© 2025 Engineering walle. All rights reserved.</p><p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato</strong></p>
+  </div>
+  <div class="footer-right">
+    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" aria-label="Whatsapp" title="whatsapp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
 
