@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diplomax Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+
+    .container {
+      background: #ffffff7b;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 340px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.5rem;
+      background:#ffffffca;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+    }
+
+    .form-group.password {
+      position: relative;
+    }
+
+    .form-group.password i {
+      position: absolute;
+      right: 10px;
+      top: 38px;
+      cursor: pointer;
+    }
+
+    .btn1 {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      background: black;
+      margin:2rem 1rem 1rem 1rem;      
+      color: white;
+      font-size:1rem;
+      border: none;
+      font-weight:bold;
+      display:grid;
+      border-radius: 0.5rem;
+      overflow:hidden;
+      border-style:ridge;
+      cursor: pointer;
+    }
+    .btn {
+      width: 100%;
+      padding: 0.7rem;
+      background: #0072ff;
+      margin-top:1rem;
+      font-size:1rem;
+      color: white;
+      border: none;
+      font-weight:bold;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .link a {
+      color: #0072ff;
+      text-decoration: none;
+    }
+
+    .captcha {
+      margin-top: 1rem;
+    }
+
+    .toggle-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .container img {
+    width: 100px;
+    height:100px;
+    margin:0 33%;    
+    border:2px dashed #007bff;
+    border-radius:50%;
+  }
+  </style>
+</head>
+
+<body>
+    
+  <div class="container">
+  <a href="index.html"><p style="color:blue;font-weight:bold;padding:10px 0px 20px 0px;"> <i class="fa-solid fa-angles-left"> back to home</i></p></a>
+<img src="https://images.unsplash.com/vector-1754910720009-ed5efafee03f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8fA%3D%3D" alt="logo">
+    <div id="loginForm">
+      <h2>Login to Engineering Walle</h2>
+      <div class="form-group">
+        <label for="login-email">Email *</label>
+        <input type="email" id="login-email">
+      </div>
+      <div class="form-group password">
+        <label for="login-password">Password *</label>
+        <input type="password" id="login-password">
+        <i class="fa fa-eye" onclick="togglePassword('login-password')"></i>
+      </div>
+      <div class="link"><a href="#" onclick="resetPassword()">Forgot Password?</a></div>
+      <button class="btn" onclick="loginUser()">Login</button>
+    </div>
+
+    <div id="signUpForm" style="display:none;">
+      <h2>Sign Up to Engineering Walle</h2>
+      <div class="form-group">
+        <label for="signup-name">Name *</label>
+        <input type="text" id="signup-name">
+      </div>
+      <div class="form-group">
+        <label for="signup-email">Email *</label>
+        <input type="email" id="signup-email">
+      </div>
+      <div class="form-group password">
+        <label for="signup-password">Password *</label>
+        <input type="password" id="signup-password">
+        <i class="fa fa-eye" onclick="togglePassword('signup-password')"></i>
+      </div>
+      <button class="btn" onclick="signUpUser()">Sign Up</button>
+    </div>
+    <div class="toggle-container">
+      <button onclick="showLogin()" class="btn1">Login</button>
+      <button onclick="showSignUp()" class="btn1">Sign Up</button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAxXyOkWXwFsg5RON1MbWdvV8a00USfCDI",
+      authDomain: "diplomax-auth.firebaseapp.com",
+      projectId: "diplomax-auth",
+      storageBucket: "diplomax-auth.appspot.com",
+      messagingSenderId: "1076802833042",
+      appId: "1:1076802833042:web:fd1ae5754cc9cb47e9744b",
+      measurementId: "G-XVFLTZ57EP"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    window.togglePassword = function(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    window.showLogin = function() {
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('signUpForm').style.display = 'none';
+    }
+
+    window.showSignUp = function() {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('signUpForm').style.display = 'block';
+    }
+
+    window.loginUser = function() {
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => window.location.href = "https://diplomax-in.github.io/07/")
+        .catch(err => alert(err.message));
+    }
+
+    window.signUpUser = function() {
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => alert("Sign-up successful! Now login."))
+        .catch(err => alert(err.message));
+    }
+
+    window.resetPassword = function() {
+      const email = prompt("Enter your email for password reset:");
+      if (!email) return;
+      sendPasswordResetEmail(auth, email)
+        .then(() => alert("Password reset email sent!"))
+        .catch(err => alert(err.message));
+    }
+  </script>
+</body>
+
+</html>
+
