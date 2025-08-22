@@ -17,108 +17,129 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const notesData = {
-    "CSE": {
-      "Semester 1": [
-        { name: "C Notes", url: "notes/cse/sem1/c.pdf" },
-        { name: "Math Notes", url: "notes/cse/sem1/math.pdf" },
-        { name: "Physics Notes", url: "notes/cse/sem1/physics.pdf" }
-      ],
-      "Semester 2": [
-        {name: "FEEE Notes ✅", url: "notes/cse/sem2/ds.pdf" },
-        { name:"ENV. Notes ✅", url: "notes/cse/sem2/oop.pdf" }
-      ]
-    },
-    "ME": {
-      "Semester 1": [
-        { name: "Mechanics Notes", url: "notes/me/sem1/mechanics.pdf" },
-        { name: "Math Notes", url: "notes/me/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "Thermo Notes", url: "notes/me/sem2/thermo.pdf" },
-        { name: "Workshop Notes", url: "notes/me/sem2/workshop.pdf" }
-      ]
-    },
-    "EE": {
-      "Semester 1": [
-        { name: "Basic Electrical Notes", url: "notes/ee/sem1/basic-electrical.pdf" },
-        { name: "Math Notes", url: "notes/ee/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "Circuit Theory Notes", url: "notes/ee/sem2/circuit.pdf" },
-        { name: "Machines Notes", url: "notes/ee/sem2/machines.pdf" }
-      ]
-    },
-    "ECE": {
-      "Semester 1": [
-        { name: "Electronics Basics", url: "notes/ece/sem1/electronics.pdf" },
-        { name: "Math Notes", url: "notes/ece/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "Digital Electronics", url: "notes/ece/sem2/digital.pdf" },
-        { name: "Communication Basics", url: "notes/ece/sem2/comm.pdf" }
-      ]
-    },
+  "CSE": {
+    "Semester 1": [
+      { name: "C Notes", url: "notes/cse/sem1/c.pdf" },
+      { name: "Math Notes", url: "notes/cse/sem1/math.pdf" },
+      { name: "Physics Notes", url: "notes/cse/sem1/physics.pdf" }
+    ],
+    "Semester 2": [
+      { name: "Python Notes ✅", url: "https://drive.google.com/drive/folders/1KWVW-3OHnlRnA_DOyrkMUrjewXePZLRz" },
+      { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+      { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+      { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+      { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+    ]
+  },
+  "ME": {
+    "Semester 1": [
+      { name: "Mechanics Notes", url: "notes/me/sem1/mechanics.pdf" },
+      { name: "Math Notes", url: "notes/me/sem1/math.pdf" }
+    ],
+    "Semester 2": [
+      { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+      { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+      { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+      { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+    ]
+  },
+  "EE": {
+    "Semester 1": [
+      { name: "Basic Electrical Notes", url: "notes/ee/sem1/basic-electrical.pdf" },
+      { name: "Math Notes", url: "notes/ee/sem1/math.pdf" }
+    ],
+    "Semester 2": [
+      { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+      { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+      { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+      { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+    ]
+  },
+  "ECE": {
+    "Semester 1": [
+      { name: "Electronics Basics", url: "notes/ece/sem1/electronics.pdf" },
+      { name: "Math Notes", url: "notes/ece/sem1/math.pdf" }
+    ],
+    "Semester 2": [
+      { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+      { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+      { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+      { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+    ]
+  },
+ 
     "CE": {
       "Semester 1": [
         { name: "Engineering Drawing", url: "notes/ce/sem1/drawing.pdf" },
         { name: "Math Notes", url: "notes/ce/sem1/math.pdf" }
       ],
       "Semester 2": [
-        { name: "Surveying Notes", url: "notes/ce/sem2/survey.pdf" },
-        { name: "Construction Materials", url: "notes/ce/sem2/materials.pdf" }
-      ]
-    },
+      { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+      { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+      { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+      { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+    ]
+  },
     "CHE": {
       "Semester 1": [
         { name: "Chemistry Notes", url: "notes/che/sem1/chemistry.pdf" },
         { name: "Math Notes", url: "notes/che/sem1/math.pdf" }
       ],
       "Semester 2": [
-        { name: "Process Engineering", url: "notes/che/sem2/process.pdf" },
-        { name: "Thermo for Chem Engg", url: "notes/che/sem2/thermo.pdf" }
-      ]
-    },
+      { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+      { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+      { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+      { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+    ]
+  },
     "IT": {
       "Semester 1": [
         { name: "C Programming", url: "notes/it/sem1/c.pdf" },
         { name: "Math Notes", url: "notes/it/sem1/math.pdf" }
       ],
       "Semester 2": [
-        { name: "Web Development", url: "notes/it/sem2/webdev.pdf" },
-        { name: "Database Notes", url: "notes/it/sem2/db.pdf" }
-      ]
-    },
+      { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+      { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+      { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+      { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+    ]
+  },
     "AE": {
       "Semester 1": [
         { name: "Aerodynamics Basics", url: "notes/ae/sem1/aero.pdf" },
         { name: "Math Notes", url: "notes/ae/sem1/math.pdf" }
       ],
       "Semester 2": [
-        { name: "Aircraft Structures", url: "notes/ae/sem2/structures.pdf" },
-        { name: "Propulsion Notes", url: "notes/ae/sem2/propulsion.pdf" }
-      ]
-    },
+      { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+      { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+      { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+      { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+    ]
+  },
     "MIN": {
       "Semester 1": [
         { name: "Mining Basics", url: "notes/min/sem1/mining.pdf" },
         { name: "Math Notes", url: "notes/min/sem1/math.pdf" }
       ],
       "Semester 2": [
-        { name: "Mine Surveying", url: "notes/min/sem2/survey.pdf" },
-        { name: "Geology Notes", url: "notes/min/sem2/geology.pdf" }
-      ]
-    },
+      { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+      { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+      { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+      { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+    ]
+  },
     "PT": {
       "Semester 1": [
         { name: "Production Basics", url: "notes/pt/sem1/production.pdf" },
         { name: "Math Notes", url: "notes/pt/sem1/math.pdf" }
       ],
       "Semester 2": [
-        { name: "Manufacturing Tech", url: "notes/pt/sem2/manufacturing.pdf" },
-        { name: "Tool Design Notes", url: "notes/pt/sem2/tool.pdf" }
-      ]
-    }
-  };
+      { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+      { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+      { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+      { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+    ]
+  },
 
   // show semesters
   window.showSemesters = function (branch) {
