@@ -247,3 +247,21 @@ if (slides) {
 
   interval = setInterval(autoSlide, 1500);
 }
+
+  // Show button after scrolling
+    window.onscroll = function() {
+      let btn = document.getElementById("goTopBtn");
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    // Scroll to top smoothly
+    function goToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
