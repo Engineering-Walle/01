@@ -205,6 +205,36 @@
 
   </div>
 </section>
+<button id="openFeedbackBtn" class="floating-btn">
+  <i class="fas fa-pen-to-square"></i>
+</button>
+<!-- Feedback Form Popup -->
+<div id="feedbackPopup" class="feedback-popup">
+  <div class="feedback-box">
+    <button id="closeFeedbackBtn" class="close-btn">❌</button>
+    <h2><i class="fas fa-pen-to-square"></i> Send Feedback</h2>
+    <form id="feedbackForm" action="https://formspree.io/f/xpwjrzyn" method="POST">
+      <label>
+        <i class="fas fa-envelope"></i> Your Email
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        <i class="fas fa-comment"></i> Your Message
+        <textarea name="message" required></textarea>
+      </label>
+      <button type="submit" class="send-btn">
+        <i class="fas fa-paper-plane"></i> Send
+      </button>
+    </form>
+
+    <!-- Thank You Message -->
+    <div id="thankYouMsg" class="thank-you">
+      <i class="fas fa-check-circle"></i>
+      <p>Thank you for your feedback! 💙</p>
+    </div>
+  </div>
+</div>
+
   <footer class="footer">
   <div class="footer-left"> 
     <div class="footer-links">
