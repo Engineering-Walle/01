@@ -911,7 +911,7 @@ slides{
   /* Go To Top Button */
     #goTopBtn {
       position: fixed;
-      bottom: 80px;
+      bottom: 85px;
       right: 30px;
       z-index: 100;
       font-size: 18px;
