@@ -85,7 +85,7 @@
 </section>
 
   <!-- main -->
-  
+
   <!-- cards -->
   <h1 style="color:black; text-align:center;"> <i class="fa fa-long-arrow-alt-down" aria-hidden="true"></i> Content that we provide</h1>
   <div class="containerx" id="containerx">
@@ -205,35 +205,44 @@
 
   </div>
 </section>
-<button id="openFeedbackBtn" class="floating-btn">
-  <i class="fas fa-pen-to-square"></i>
-</button>
-<!-- Feedback Form Popup -->
-<div id="feedbackPopup" class="feedback-popup">
-  <div class="feedback-box">
-    <button id="closeFeedbackBtn" class="close-btn">❌</button>
-    <h2><i class="fas fa-pen-to-square"></i> Send Feedback</h2>
-    <form id="feedbackForm" action="https://formspree.io/f/xpwjrzyn" method="POST">
-      <label>
-        <i class="fas fa-envelope"></i> Your Email
-        <input type="email" name="email" required>
-      </label>
-      <label>
-        <i class="fas fa-comment"></i> Your Message
-        <textarea name="message" required></textarea>
-      </label>
-      <button type="submit" class="send-btn">
-        <i class="fas fa-paper-plane"></i> Send
-      </button>
-    </form>
 
-    <!-- Thank You Message -->
-    <div id="thankYouMsg" class="thank-you">
-      <i class="fas fa-check-circle"></i>
-      <p>Thank you for your feedback! 💙</p>
+  <!-- Floating Feedback Button -->
+  <button id="openFeedbackBtn" class="floating-btn">
+    <i class="fas fa-pen-to-square"></i>
+  </button>
+
+  <!-- Feedback Form Popup -->
+  <div id="feedbackPopup" class="feedback-popup">
+    <div class="feedback-box">
+      <button id="closeFeedbackBtn" class="close-btn">❌</button>
+      <h2><i class="fas fa-pen-to-square"></i> Send Feedback</h2>
+      <form id="feedbackForm">
+        <label>
+          <i class="fas fa-envelope"></i> Your Email
+          <input type="email" id="email" required>
+        </label>
+        <label>
+          <i class="fas fa-comment"></i> Your Message
+          <textarea id="message" required></textarea>
+        </label>
+        <button type="submit" class="send-btn">
+          <i class="fas fa-paper-plane"></i> Send
+        </button>
+      </form>
+
+      <!-- Thank You Message -->
+      <div id="thankYouMsg" class="thank-you">
+        <i class="fas fa-check-circle"></i>
+        <p>Thank you for your feedback! 💙</p>
+      </div>
     </div>
   </div>
-</div>
+
+  <!-- Feedbacks Display Section -->
+  <div id="feedbackList" class="feedback-list">
+    <h3>💬 Recent Feedbacks</h3>
+    <ul id="feedbackItems"></ul>
+  </div>
 
   <footer class="footer">
   <div class="footer-left"> 
@@ -256,9 +265,80 @@
     <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
   </div>
 </footer>
-  
-<button onclick="goToTop()" id="goTopBtn"><i class="fas fa-arrow-up"></i></button>
 
+<button onclick="goToTop()" id="goTopBtn"><i class="fas fa-arrow-up"></i></button>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAG7Je515RXgY40n1Pjzq1O2uP34PqjmmE",
+  authDomain: "feedback-ew.firebaseapp.com",
+  databaseURL: "https://feedback-ew-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "feedback-ew",
+  storageBucket: "feedback-ew.firebasestorage.app",
+  messagingSenderId: "230117928875",
+  appId: "1:230117928875:web:bdac18726583ab59112cee",
+  measurementId: "G-86S2XRHJGP"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const openBtn = document.getElementById("openFeedbackBtn");
+const closeBtn = document.getElementById("closeFeedbackBtn");
+const popup = document.getElementById("feedbackPopup");
+const feedbackForm = document.getElementById("feedbackForm");
+const thankYouMsg = document.getElementById("thankYouMsg");
+const feedbackItems = document.getElementById("feedbackItems");
+
+// Open/Close Popup
+openBtn.addEventListener("click", () => popup.style.display = "flex");
+closeBtn.addEventListener("click", () => popup.style.display = "none");
+
+// Submit Feedback
+feedbackForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  push(ref(db, "feedbacks"), {
+    email: email,
+    message: message,
+    timestamp: new Date().toISOString()
+  });
+
+  // Hide form, show thank you
+  feedbackForm.style.display = "none";
+  thankYouMsg.style.display = "block";
+
+  // Auto close after 2.5s
+  setTimeout(() => {
+    popup.style.display = "none";
+    feedbackForm.style.display = "block";
+    thankYouMsg.style.display = "none";
+    feedbackForm.reset();
+  }, 2500);
+});
+
+// Show Feedbacks (Latest First)
+onValue(ref(db, "feedbacks"), (snapshot) => {
+  feedbackItems.innerHTML = "";
+  snapshot.forEach((childSnapshot) => {
+    const data = childSnapshot.val();
+    const li = document.createElement("li");
+    li.classList.add("feedback-card");
+    li.innerHTML = `
+      <div class="feedback-header">
+        <span class="email">${data.email}</span>
+        <span class="time">${new Date(data.timestamp).toLocaleString()}</span>
+      </div>
+      <p class="message">${data.message}</p>
+    `;
+    feedbackItems.prepend(li);
+  });
+});
+</script>
   <script src="script.js"></script>
 </body>
 </html>
