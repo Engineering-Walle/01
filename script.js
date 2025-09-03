@@ -1,4 +1,32 @@
 
+const element = document.getElementById("typing");
+const text = "Engineering Walle";
+let i = 0;
+let forward = true;
+
+function typeEffect() {
+  if (forward) {
+    element.innerHTML = text.slice(0, i) + "<span></span>";
+    i++;
+    if (i > text.length) {
+      forward = false;
+      setTimeout(typeEffect, 1500); // pause at end
+      return;
+    }
+  } else {
+    element.innerHTML = text.slice(0, i) + "<span></span>";
+    i--;
+    if (i < 0) {
+      forward = true;
+      i = 0;
+    }
+  }
+  setTimeout(typeEffect, forward ? 150 : 100); // typing & deleting speed
+}
+
+typeEffect();
+
+
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="PqFanbRcUsOq5CQLImFkx";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 
 
