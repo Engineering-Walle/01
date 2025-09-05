@@ -1,52 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
- <!-- Google Font -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<title>EW/Notes by Branch & Semester</title>
-<link rel="stylesheet" href="style.css">
-<style>
+  <title>EW/Notes by Branch & Semester</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
     ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-ul li a:hover {
-  text-decoration: underline;
-  color: #ffcc00; /* hover pe yellow highlight */
-}
-</style>
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    ul li a:hover {
+      text-decoration: underline;
+      color: #ffcc00; /* hover pe yellow highlight */
+    }
+    .hidden { display: none; }
+    .fade { animation: fadeIn 0.5s ease-in-out; }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    .list { list-style: none; padding: 0; }
+    .list li {
+      padding: 12px;
+      background: #f4f4f4;
+      margin: 6px 0;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .list li:hover { background: #ffcc00; color: #222; }
+    .back-btn { display: inline-block; margin: 10px 0; cursor: pointer; color: #007bff; font-weight: bold; }
+    #goTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px; right: 20px;
+      border: none; border-radius: 50%;
+      padding: 12px; background: #007bff;
+      color: white; cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header / Navbar -->
+  <!-- Header / Navbar -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="logo" href="index.html" aria-label="Homepage">
-        <img src="https://images.unsplash.com/vector-1754910720009-ed5efafee03f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MXx8fGVufDB8fHx8fA%3D%3D" alt="Logo placeholder" />
-        <span href="index.html" class="brand">Engineering walle</span>
+        <img src="https://images.unsplash.com/vector-1754910720009-ed5efafee03f?w=800&auto=format&fit=crop&q=60" alt="Logo placeholder" />
+        <span id="typing" class="brand">Engineering Walle</span>
       </a>
-<div class="cta-group">
+      <div class="cta-group">
         <a class="btn btn-outline" href="loginsignup.html">Login</a>
       </div>
-      <!-- Mobile toggle -->
-      <button class="nav-toggle" aria-label="Open navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <!-- Navigation -->
+      <button class="nav-toggle" aria-label="Open navigation"><i class="fas fa-bars"></i></button>
       <nav class="main-nav" role="navigation" aria-label="Main Navigation">
-          
-        <!-- Cut/Close button -->
-        <button class="nav-close" aria-label="Close navigation">
-          <i class="fas fa-times"></i>
-        </button>
-
+        <button class="nav-close" aria-label="Close navigation"><i class="fas fa-times"></i></button>
         <ul>
           <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
           <li><a href="notice.html"><i class="fas fa-copy"></i> Notices</a></li>
@@ -59,63 +68,252 @@ ul li a:hover {
       </nav>
     </div>
   </header>
-
-  <!-- Overlay -->
   <div class="nav-overlay"></div>  
-  
-<div class="notesbranchescontainer">
+
+  <!-- Branch & Semester Container -->
+  <div class="notesbranchescontainer">
     <h2>Select Branch</h2>
     <ul class="list" id="branchList">
-    <li onclick="showSemesters('CSE')"><i class="fas fa-laptop-code"></i> Computer Science & Engineering</li>
-    <li onclick="showSemesters('ME')"><i class="fas fa-cogs"></i> Mechanical Engineering</li>
-    <li onclick="showSemesters('EE')"><i class="fas fa-bolt"></i> Electrical Engineering</li>
-    <li onclick="showSemesters('ECE')"><i class="fas fa-satellite-dish"></i>Electronics & Commu. Engineering</li>
-    <li onclick="showSemesters('CE')"><i class="fas fa-drafting-compass"></i> Civil Engineering</li>
-    <li onclick="showSemesters('CHE')"><i class="fas fa-flask"></i> Chemical Engineering</li>
-    <li onclick="showSemesters('IT')"><i class="fas fa-network-wired"></i> Information Technology</li>
-    <li onclick="showSemesters('AE')"><i class="fas fa-plane"></i> Aeronautical Engineering</li>
-    <li onclick="showSemesters('MIN')"><i class="fas fa-hard-hat"></i> Mining Engineering</li>
-    <li onclick="showSemesters('PT')"><i class="fas fa-industry"></i> Production Technology</li>
+      <li onclick="showSemesters('CSE')"><i class="fas fa-laptop-code"></i> Computer Science & Engineering</li>
+      <li onclick="showSemesters('ME')"><i class="fas fa-cogs"></i> Mechanical Engineering</li>
+      <li onclick="showSemesters('EE')"><i class="fas fa-bolt"></i> Electrical Engineering</li>
+      <li onclick="showSemesters('ECE')"><i class="fas fa-satellite-dish"></i> Electronics & Commu. Engineering</li>
+      <li onclick="showSemesters('CE')"><i class="fas fa-drafting-compass"></i> Civil Engineering</li>
+      <li onclick="showSemesters('CHE')"><i class="fas fa-flask"></i> Chemical Engineering</li>
+      <li onclick="showSemesters('IT')"><i class="fas fa-network-wired"></i> Information Technology</li>
+      <li onclick="showSemesters('AE')"><i class="fas fa-plane"></i> Aeronautical Engineering</li>
+      <li onclick="showSemesters('MIN')"><i class="fas fa-hard-hat"></i> Mining Engineering</li>
+      <li onclick="showSemesters('PT')"><i class="fas fa-industry"></i> Production Technology</li>
     </ul>
-
     <div id="semesterSection" class="hidden fade">
-        <span class="back-btn" onclick="goBack('branch')"><i class="fa fa-long-arrow-alt-left" aria-hidden="true"> 𝗕𝗮𝗰𝗸 𝘁𝗼 𝗕𝗿𝗮𝗻𝗰𝗵𝗲𝘀</i></span>
-        <h2 id="branchTitle"></h2>
-        <ul class="list" id="semesterList"></ul>
+      <span class="back-btn" onclick="goBack('branch')"><i class="fa fa-long-arrow-alt-left"></i> Back to Branches</span>
+      <h2 id="branchTitle"></h2>
+      <ul class="list" id="semesterList"></ul>
     </div>
-
     <div id="notesSection" class="hidden fade">
-        <span class="back-btn" onclick="goBack('semester')"><i class="fa fa-long-arrow-alt-left" aria-hidden="true"> 𝗕𝗮𝗰𝗸 𝘁𝗼 𝗦𝗲𝗺𝗲𝘀𝘁𝗲𝗿𝘀</i></span>
-        <h2 id="semesterTitle"></h2>
-        <ul class="list" id="notesList"></ul>
+      <span class="back-btn" onclick="goBack('semester')"><i class="fa fa-long-arrow-alt-left"></i> Back to Semesters</span>
+      <h2 id="semesterTitle"></h2>
+      <ul class="list" id="notesList"></ul>
     </div>
-</div>
+  </div>
+
   <!-- Footer -->
-  
-    <footer class="footer">
-  <div class="footer-left"> 
-    <div class="footer-links">
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="privacy-security.html">Privacy & Security</a>
-      <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
-      <a href="about-us.html">About Us</a>    
+  <footer class="footer">
+    <div class="footer-left"> 
+      <div class="footer-links">
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy-security.html">Privacy & Security</a>
+        <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
+        <a href="about-us.html">About Us</a>    
+      </div>
+      <hr>
+      <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
+      <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato</strong></p>
     </div>
-<hr>
-    <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
-    <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato</strong></p>
-  </div>
+    <div class="footer-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/engineeringwalle_jh"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
 
-  <div class="footer-right">
-    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
-    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-</footer>
-  
-<button onclick="goToTop()" id="goTopBtn"><i class="fas fa-arrow-up"></i></button>
+  <!-- Scroll to Top -->
+  <button onclick="goToTop()" id="goTopBtn"><i class="fas fa-arrow-up"></i></button>
 
-  <script src="script.js"></script>
+  <!-- Scripts -->
+  <script>
+   
+
+    /* Chatbase Bot */
+    (function(){
+      if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+        window.chatbase=(...a)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(a)};
+        window.chatbase=new Proxy(window.chatbase,{get(t,p){if(p==="q"){return t.q}return(...a)=>t(p,...a)}});
+      }
+      const onLoad=function(){
+        const script=document.createElement("script");
+        script.src="https://www.chatbase.co/embed.min.js";
+        script.id="PqFanbRcUsOq5CQLImFkx";
+        script.domain="www.chatbase.co";
+        document.body.appendChild(script);
+      };
+      if(document.readyState==="complete"){onLoad();} else {window.addEventListener("load",onLoad);}
+    })();
+
+    /* Branch -> Semester -> Notes */
+    const semesterListArray = ["Semester 1","Semester 2","Semester 3","Semester 4","Semester 5","Semester 6"];
+    const semesterData = { CSE:[...semesterListArray], ME:[...semesterListArray], EE:[...semesterListArray], ECE:[...semesterListArray], CE:[...semesterListArray], CHE:[...semesterListArray], IT:[...semesterListArray], AE:[...semesterListArray], MIN:[...semesterListArray], PT:[...semesterListArray]};
+    const notesData = {
+    "CSE": {
+      "Semester 1": [
+        { name: "C Notes", url: "notes/cse/sem1/c.pdf" },
+        { name: "Math Notes", url: "notes/cse/sem1/math.pdf" },
+        { name: "Physics Notes", url: "notes/cse/sem1/physics.pdf" }
+      ],
+      "Semester 2": [
+        { name: "Python Notes ✅", url: "https://drive.google.com/drive/folders/1KWVW-3OHnlRnA_DOyrkMUrjewXePZLRz" },
+        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+      ]
+    },
+    "ME": {
+      "Semester 1": [
+        { name: "Mechanics Notes", url: "notes/me/sem1/mechanics.pdf" },
+        { name: "Math Notes", url: "notes/me/sem1/math.pdf" }
+      ],
+      "Semester 2": [
+        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+      ]
+    },
+    "EE": {
+      "Semester 1": [
+        { name: "Basic Electrical Notes", url: "notes/ee/sem1/basic-electrical.pdf" },
+        { name: "Math Notes", url: "notes/ee/sem1/math.pdf" }
+      ],
+      "Semester 2": [
+        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+      ]
+    },
+    "ECE": {
+      "Semester 1": [
+        { name: "Electronics Basics", url: "notes/ece/sem1/electronics.pdf" },
+        { name: "Math Notes", url: "notes/ece/sem1/math.pdf" }
+      ],
+      "Semester 2": [
+        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+      ]
+    },
+    "CE": {
+      "Semester 1": [
+        { name: "Engineering Drawing", url: "notes/ce/sem1/drawing.pdf" },
+        { name: "Math Notes", url: "notes/ce/sem1/math.pdf" }
+      ],
+      "Semester 2": [
+        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+      ]
+    },
+    "CHE": {
+      "Semester 1": [
+        { name: "Chemistry Notes", url: "notes/che/sem1/chemistry.pdf" },
+        { name: "Math Notes", url: "notes/che/sem1/math.pdf" }
+      ],
+      "Semester 2": [
+        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+      ]
+    },
+    "IT": {
+      "Semester 1": [
+        { name: "C Programming", url: "notes/it/sem1/c.pdf" },
+        { name: "Math Notes", url: "notes/it/sem1/math.pdf" }
+      ],
+      "Semester 2": [
+        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+      ]
+    },
+    "AE": {
+      "Semester 1": [
+        { name: "Aerodynamics Basics", url: "notes/ae/sem1/aero.pdf" },
+        { name: "Math Notes", url: "notes/ae/sem1/math.pdf" }
+      ],
+      "Semester 2": [
+        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+      ]
+    },
+    "MIN": {
+      "Semester 1": [
+        { name: "Mining Basics", url: "notes/min/sem1/mining.pdf" },
+        { name: "Math Notes", url: "notes/min/sem1/math.pdf" }
+      ],
+      "Semester 2": [
+        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+      ]
+    },
+    "PT": {
+      "Semester 1": [
+        { name: "Production Basics", url: "notes/pt/sem1/production.pdf" },
+        { name: "Math Notes", url: "notes/pt/sem1/math.pdf" }
+      ],
+      "Semester 2": [
+        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
+        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
+        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
+        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
+      ]
+    }
+  }; // ✅ CLOSE notesData here
+
+    window.showSemesters=function(branch){
+      document.getElementById("branchList").classList.add("hidden");
+      const semesterList=document.getElementById("semesterList"); semesterList.innerHTML="";
+      semesterData[branch].forEach(sem=>{
+        const li=document.createElement("li");
+        li.textContent=sem; li.onclick=()=>showNotes(branch,sem);
+        semesterList.appendChild(li);
+      });
+      document.getElementById("branchTitle").textContent=branch+" - Select Semester";
+      document.getElementById("semesterSection").classList.remove("hidden");
+    };
+    window.showNotes=function(branch,sem){
+      document.getElementById("semesterSection").classList.add("hidden");
+      const notesList=document.getElementById("notesList"); notesList.innerHTML="";
+      (notesData[branch]&&notesData[branch][sem]||[{name:"No Notes Available",url:"#"}]).forEach(note=>{
+        const li=document.createElement("li");
+        const a=document.createElement("a"); a.textContent=note.name; a.href=note.url; a.target="_blank";
+        li.appendChild(a); notesList.appendChild(li);
+      });
+      document.getElementById("semesterTitle").textContent=branch+" - "+sem+" Notes";
+      document.getElementById("notesSection").classList.remove("hidden");
+    };
+    window.goBack=function(level){
+      if(level==="branch"){document.getElementById("semesterSection").classList.add("hidden");document.getElementById("branchList").classList.remove("hidden");}
+      else if(level==="semester"){document.getElementById("notesSection").classList.add("hidden");document.getElementById("semesterSection").classList.remove("hidden");}
+    };
+
+    /* Navbar Toggle */
+    const navToggle=document.querySelector(".nav-toggle");
+    const navClose=document.querySelector(".nav-close");
+    const navOverlay=document.querySelector(".nav-overlay");
+    const body=document.body;
+    if(navToggle) navToggle.addEventListener("click",()=>body.classList.add("nav-open"));
+    if(navClose) navClose.addEventListener("click",()=>body.classList.remove("nav-open"));
+    if(navOverlay) navOverlay.addEventListener("click",()=>body.classList.remove("nav-open"));
+
+    /* Scroll To Top */
+    window.onscroll=function(){
+      let btn=document.getElementById("goTopBtn");
+      if(document.body.scrollTop>200||document.documentElement.scrollTop>200){btn.style.display="block";}
+      else{btn.style.display="none";}
+    };
+    function goToTop(){ window.scrollTo({top:0,behavior:"smooth"}); }
+    window.goToTop=goToTop;
+  </script>
 </body>
 </html>
