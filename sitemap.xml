@@ -1,39 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://engineering-walle.github.io/01/</loc></url>
+  <url><loc>https://engineering-walle.github.io/01/semnotes.html</loc></url>
+  <url><loc>https://engineering-walle.github.io/01/roadmaps.html</loc></url>
+  <url><loc>https://engineering-walle.github.io/01/disclaimer.html</loc></url>
+  <url><loc>https://engineering-walle.github.io/01/privacy-security.html</loc></url>
 
-  <url>
-    <loc>https://engineering-walle.github.io/01/</loc>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://engineering-walle.github.io/01/about-us.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://engineering-walle.github.io/01/disclaimer.html</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://engineering-walle.github.io/01/loginsignup.html</loc>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://engineering-walle.github.io/01/privacy-security.html</loc>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://engineering-walle.github.io/01/roadmaps.html</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://engineering-walle.github.io/01/semnotes.html</loc>
-    <priority>0.9</priority>
-  </url>
-
+<url><loc>https://engineering-walle.github.io/01/about-us.html</loc></url>
+  <!-- add other pages too -->
 </urlset>
