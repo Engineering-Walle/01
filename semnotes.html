@@ -1,70 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Title -->
-  <title>Diploma Notes | Polytechnic Semester-wise Notes PDF Free Download</title>
+  <title>Diploma Notes | Syllabus | PYQs</title>
 
   <!-- Meta Description -->
-  <meta name="description" content="Download free Diploma notes for all Polytechnic branches and semesters. Get JUT Diploma notes, subject-wise PDFs, and study materials to prepare for exams.">
+  <meta name="description" content="Engineering Walle provides free DIPLOMA & B-TECH Notes, Previous Year Questions (PYQs), Syllabus, Important Questions,Career Roadmaps for all branches and all important resources to make easy for learning.">
 
-  <!-- Keywords -->
-  <meta name="keywords" content="Jharkhand diploma notes,diploma wallah,diplomawallah,diploma walla,diploma wallah notes,diploma wallah website, diploma question banks,diploma e books,polytechnic materials, polytechnic wallah, polytechnic study materials, JUT syllabus, free diploma books, engineering,diploma resources MBSTE diploma notes, SBSTE notes PDF, DTEK board notes, Bihar diploma notes, Diploma study materials, Polytechnic notes download, MBSTE study notes, SBSTE polytechnic study material, DTEK semester notes, diploma 1st sem notes, diploma 2nd sem notes, diploma 3rd sem notes, diploma 4th sem notes, polytechnic handwritten notes, diploma PDF notes free download, Diploma Notes, Polytechnic Notes, JUT Diploma Notes, Semester Wise Notes, Diploma PDF, Jharkhand Polytechnic Notes, Engineering Notes Free Download, CSE Diploma Notes, 1st Semester Diploma Notes, 2nd Semester Diploma Notes">
+  <!-- Meta Keywords -->
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Diploma Notes | Polytechnic Semester-wise Notes PDF Free Download">
-  <meta property="og:description" content="Get free Diploma and Polytechnic notes in PDF format for all semesters and branches. Perfect study material for exam preparation.">
-  <meta property="og:type" content="website">
+    <meta name="keywords" content="Engineers,engineering,diploma,jut,jharkhand polytechnic,poletechnic walle,Jharkhand diploma notes,diploma wallah,diplomawallah,diploma walla,diploma wallah notes,diploma wallah website, diploma question banks,diploma e books,polytechnic materials, polytechnic wallah, polytechnic study materials, JUT syllabus, free diploma books, engineering,diploma resources MBSTE diploma notes, SBSTE notes PDF, DTEK board notes, Bihar diploma notes, Diploma study materials, Polytechnic notes download, MBSTE study notes, SBSTE polytechnic study material, DTEK semester notes, diploma 1st sem notes, diploma 2nd sem notes, diploma 3rd sem notes, diploma 4th sem notes, polytechnic handwritten notes, diploma PDF notes free download, diploma notes, diploma syllabus, diploma PYQ, important questions, engineering diploma study material, free diploma notes, diploma exam preparation">
+
+  <!-- Author -->
+  <meta name="author" content="Engineering Walle">
+
+  <!-- Open Graph (for social media previews) -->
+  <meta property="og:title" content="Engineering Walle | Diploma Notes, Syllabus, PYQs & Career Roadmap">
+  <meta property="og:description" content="Free Diploma Notes, PYQs, Syllabus, Important Questions, and Career Roadmaps for all branches.">
   <meta property="og:url" content="https://engineering-walle.github.io/01/semnotes.html">
-  <meta property="og:image" content="https://engineering-walle.github.io/01/logo.png">
+  <meta property="og:type" content="website">
 
-  <!-- Twitter -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Diploma Notes | Polytechnic Semester-wise Notes PDF Free Download">
-  <meta name="twitter:description" content="Download Polytechnic Diploma notes PDF for all semesters and branches. Free study materials and subject-wise notes.">
-  <meta name="twitter:image" content="https://engineering-walle.github.io/01/logo.png">
+  <meta name="twitter:title" content="Engineering Walle | Diploma Notes, Syllabus, PYQs & Career Roadmap">
+  <meta name="twitter:description" content="Free Diploma Notes, PYQs, Syllabus, Important Questions, and Career Roadmaps for all branches.">
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  
-  <link rel="stylesheet" href="style.css">
   <style>
-    ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+ .containers{
+     max-width:1200px;
+     margin:40px auto;
+     padding:10px 20px;
+     }
+    h1,h2{margin-bottom:25px;color:#2f3640;text-align:center;}
+
+    /* Grid Cards */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
+
+    .card{
+      background:#ffffff; border-radius:15px; padding:25px 20px;
+      text-align:center; cursor:pointer; transition:0.3s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
     }
-    ul li a:hover {
-      text-decoration: underline;
-      color: #ffcc00; /* hover pe yellow highlight */
+    .card:hover{transform:translateY(-8px);box-shadow:0 12px 25px rgba(0,0,0,0.15);}
+    .card i{font-size:40px;margin-bottom:15px;color:#2f3640;}
+    .card span{display:block;font-weight:600;font-size:18px;color:#2f3640;}
+
+    /* Semester Cards */
+    .semester-card{background:#2f3640;color:#fff;padding:20px;border-radius:12px;font-weight:600;transition:0.3s;}
+    .semester-card:hover{background:#ff9f1c;color:#222;}
+
+    /* Notes Cards */
+    .note-card{background:#fff;padding:15px;border-radius:12px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.08);transition:0.3s;}
+    .note-card a{display:block;text-decoration:none;color:#2f3640;font-weight:600;}
+    .note-card:hover{transform:translateY(-5px);box-shadow:0 8px 18px rgba(0,0,0,0.12);}
+
+    /* Back button */
+    .back-btn{display:inline-block;margin:15px 0;color:#2f3640;font-weight:600;cursor:pointer;}
+    .hidden{display:none;}
+
+    /* Footer */
+    footer{
+      background:#2f3640;color:#fff;padding:25px 30px;margin-top:40px;
+      display:flex;justify-content:space-between;flex-wrap:wrap;
+      box-shadow:0 -4px 12px rgba(0,0,0,0.08);
     }
-    .hidden { display: none; }
-    .fade { animation: fadeIn 0.5s ease-in-out; }
-    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-    .list { list-style: none; padding: 0; }
-    .list li {
-      padding: 12px;
-      background: #f4f4f4;
-      margin: 6px 0;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .list li:hover { background: #ffcc00; color: #222; }
-    .back-btn { display: inline-block; margin: 10px 0; cursor: pointer; color: #007bff; font-weight: bold; }
-    #goTopBtn {
-      display: none;
-      position: fixed;
-      bottom: 20px; right: 20px;
-      border: none; border-radius: 50%;
-      padding: 12px; background: #007bff;
-      color: white; cursor: pointer;
-    }
+    footer a{color:#fff;margin-right:15px;text-decoration:none;transition:0.3s;}
+    footer a:hover{color:#ff9f1c;}
+    footer p{margin-top:10px;font-size:14px;}
+    
+    /* Responsive tweaks */
+    @media(max-width:768px){.grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));}}
+    @media(max-width:480px){header{flex-direction:column;gap:10px;}header nav ul{flex-wrap:wrap;justify-content:center;}}
   </style>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Header / Navbar -->
@@ -72,14 +90,24 @@
     <div class="container header-inner">
       <a class="logo" href="index.html" aria-label="Homepage">
         <img src="https://engineering-walle.github.io/01/logo.png" alt="Logo placeholder" />
-        <span class="brand">Engineering Walle</span>
+        <span href="index.html" class="brand">Engineering walle</span>
       </a>
-      <div class="cta-group">
+<div class="cta-group">
         <a class="btn btn-outline" href="loginsignup.html">Login</a>
       </div>
-      <button class="nav-toggle" aria-label="Open navigation"><i class="fas fa-bars"></i></button>
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" aria-label="Open navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navigation -->
       <nav class="main-nav" role="navigation" aria-label="Main Navigation">
-        <button class="nav-close" aria-label="Close navigation"><i class="fas fa-times"></i></button>
+
+        <!-- Cut/Close button -->
+        <button class="nav-close" aria-label="Close navigation">
+          <i class="fas fa-times"></i>
+        </button>
+
         <ul>
           <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
           <li><a href="notice.html"><i class="fas fa-copy"></i> Notices</a></li>
@@ -88,40 +116,77 @@
           <li><a href="colleges.html"><i class="fas fa-university"></i> Govt. Colleges</a></li>
           <li><a href="roadmaps.html"><i class="fas fa-map"></i> Career Roadmaps</a></li>
           <li><a href="Quiz.html"><i class="fas fa-brain"></i> Quiz Center</a></li>
+          <li><a href="updates"><i class="fas fa-bell"></i> Latest updates</a></li>
+
         </ul>
       </nav>
     </div>
   </header>
-  <div class="nav-overlay"></div>  
 
-  <!-- Branch & Semester Container -->
-  <div class="notesbranchescontainer">
-    <h2>Select Branch</h2>
-    <ul class="list" id="branchList">
-      <li onclick="showSemesters('CSE')"><i class="fas fa-laptop-code"></i> Computer Science & Engineering</li>
-      <li onclick="showSemesters('ME')"><i class="fas fa-cogs"></i> Mechanical Engineering</li>
-      <li onclick="showSemesters('EE')"><i class="fas fa-bolt"></i> Electrical Engineering</li>
-      <li onclick="showSemesters('ECE')"><i class="fas fa-satellite-dish"></i> Electronics & Commu. Engineering</li>
-      <li onclick="showSemesters('CE')"><i class="fas fa-drafting-compass"></i> Civil Engineering</li>
-      <li onclick="showSemesters('CHE')"><i class="fas fa-flask"></i> Chemical Engineering</li>
-      <li onclick="showSemesters('IT')"><i class="fas fa-network-wired"></i> Information Technology</li>
-      <li onclick="showSemesters('AE')"><i class="fas fa-plane"></i> Aeronautical Engineering</li>
-      <li onclick="showSemesters('MIN')"><i class="fas fa-hard-hat"></i> Mining Engineering</li>
-      <li onclick="showSemesters('PT')"><i class="fas fa-industry"></i> Production Technology</li>
-    </ul>
-    <div id="semesterSection" class="hidden fade">
-      <span class="back-btn" onclick="goBack('branch')"><i class="fa fa-long-arrow-alt-left"></i> Back to Branches</span>
-      <h2 id="branchTitle"></h2>
-      <ul class="list" id="semesterList"></ul>
-    </div>
-    <div id="notesSection" class="hidden fade">
-      <span class="back-btn" onclick="goBack('semester')"><i class="fa fa-long-arrow-alt-left"></i> Back to Semesters</span>
-      <h2 id="semesterTitle"></h2>
-      <ul class="list" id="notesList"></ul>
-    </div>
+  <!-- Overlay -->
+
+  <div class="nav-overlay"></div>    
+      <span id="typing"></span>
+
+<div class="containers">
+  <h1>📚 Select Your Branch</h1>
+  <div class="grid" id="branchList">
+    <div class="card" onclick="showSemesters('CSE')"><i class="fas fa-laptop-code"></i><span>Computer Science</span></div>
+    <div class="card" onclick="showSemesters('ME')"><i class="fas fa-cogs"></i><span>Mechanical</span></div>
+    <div class="card" onclick="showSemesters('EE')"><i class="fas fa-bolt"></i><span>Electrical</span></div>
+    <div class="card" onclick="showSemesters('ECE')"><i class="fas fa-satellite-dish"></i><span>Electronics</span></div>
+    <div class="card" onclick="showSemesters('CE')"><i class="fas fa-drafting-compass"></i><span>Civil</span></div>
+    <div class="card" onclick="showSemesters('CHE')"><i class="fas fa-flask"></i><span>Chemical</span></div>
+    <div class="card" onclick="showSemesters('IT')"><i class="fas fa-network-wired"></i><span>Information Tech</span></div>
+    <div class="card" onclick="showSemesters('AE')"><i class="fas fa-plane"></i><span>Aeronautical</span></div>
+    <div class="card" onclick="showSemesters('MIN')"><i class="fas fa-hard-hat"></i><span>Mining</span></div>
+    <div class="card" onclick="showSemesters('PT')"><i class="fas fa-industry"></i><span>Production Tech</span></div>
   </div>
 
-   <!-- Floating Feedback Button -->
+  <div id="semesterSection" class="hidden">
+    <span class="back-btn" onclick="goBack('branch')">&larr; Back to Branches</span>
+    <h2 id="branchTitle"></h2>
+    <div class="grid" id="semesterList"></div>
+  </div>
+
+  <div id="notesSection" class="hidden">
+    <span class="back-btn" onclick="goBack('semester')">&larr; Back to Semesters</span>
+    <h2 id="semesterTitle"></h2>
+    <div class="grid" id="notesList"></div>
+  </div>
+</div>
+
+
+
+
+
+  <!-- Footer -->
+  <section class="join-groups">
+  <h2>Join Our Community <i class="fa-solid fa-users" style="color:#003366;"></i></h2></i>
+  <p>Stay updated with notes, PYQs, syllabus & important questions. Join our WhatsApp & Telegram groups now!</p>
+
+  <div class="groups-container">
+
+    <!-- WhatsApp Card -->
+    <div class="group-card whatsapp">
+      <i class="fab fa-whatsapp"></i>
+      <h3>WhatsApp Group</h3>
+      <p>Get instant updates, important notices & notes directly on WhatsApp.</p>
+      <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" target="_blank" class="btn join-btn">Join Now</a>
+    </div>
+
+    <!-- Telegram Card -->
+    <div class="group-card telegram">
+      <i class="fab fa-telegram"></i>
+      <h3>Telegram Channel</h3>
+      <p>Download notes, PYQs & study materials anytime from Telegram.</p>
+      <a href="https://t.me/engineeringwalle_jh" target="_blank" class="btn join-btn">Join Now</a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Floating Feedback Button -->
   <button id="openFeedbackBtn" class="floating-btn">
     <i class="fas fa-pen-to-square"></i>
   </button>
@@ -182,6 +247,44 @@
 </footer>
 
 <button onclick="goToTop()" id="goTopBtn"><i class="fas fa-arrow-up"></i></button>
+<script>
+  const semesterListArray = ["Semester 1","Semester 2","Semester 3","Semester 4","Semester 5","Semester 6"];
+  const semesterData = { CSE:[...semesterListArray], ME:[...semesterListArray], EE:[...semesterListArray], ECE:[...semesterListArray], CE:[...semesterListArray], CHE:[...semesterListArray], IT:[...semesterListArray], AE:[...semesterListArray], MIN:[...semesterListArray], PT:[...semesterListArray]};
+  const notesData = {/* Your previous notesData */};
+
+  function showSemesters(branch){
+    document.getElementById("branchList").classList.add("hidden");
+    const semesterList=document.getElementById("semesterList");
+    semesterList.innerHTML="";
+    semesterData[branch].forEach(sem=>{
+      const div=document.createElement("div");
+      div.className="semester-card"; div.textContent=sem;
+      div.onclick=()=>showNotes(branch,sem);
+      semesterList.appendChild(div);
+    });
+    document.getElementById("branchTitle").textContent=branch+" Branch Semesters";
+    document.getElementById("semesterSection").classList.remove("hidden");
+  }
+
+  function showNotes(branch,sem){
+    document.getElementById("semesterSection").classList.add("hidden");
+    const notesList=document.getElementById("notesList"); notesList.innerHTML="";
+    (notesData[branch]&&notesData[branch][sem]||[{name:"No Notes Available",url:"#"}]).forEach(note=>{
+      const div=document.createElement("div");
+      div.className="note-card";
+      const a=document.createElement("a"); a.textContent=note.name; a.href=note.url; a.target="_blank";
+      div.appendChild(a); notesList.appendChild(div);
+    });
+    document.getElementById("semesterTitle").textContent=branch+" - "+sem+" Notes";
+    document.getElementById("notesSection").classList.remove("hidden");
+  }
+
+  function goBack(level){
+    if(level==="branch"){document.getElementById("semesterSection").classList.add("hidden");document.getElementById("branchList").classList.remove("hidden");}
+    else if(level==="semester"){document.getElementById("notesSection").classList.add("hidden");document.getElementById("semesterSection").classList.remove("hidden");}
+  }
+</script>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
@@ -255,198 +358,5 @@ onValue(ref(db, "feedbacks"), (snapshot) => {
 });
 </script>
   <script src="script.js"></script>
-  <!-- Scripts -->
-  <script>
-   
-
-    /* Chatbase Bot */
-    (function(){
-      if(!window.chatbase||window.chatbase("getState")!=="initialized"){
-        window.chatbase=(...a)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(a)};
-        window.chatbase=new Proxy(window.chatbase,{get(t,p){if(p==="q"){return t.q}return(...a)=>t(p,...a)}});
-      }
-      const onLoad=function(){
-        const script=document.createElement("script");
-        script.src="https://www.chatbase.co/embed.min.js";
-        script.id="PqFanbRcUsOq5CQLImFkx";
-        script.domain="www.chatbase.co";
-        document.body.appendChild(script);
-      };
-      if(document.readyState==="complete"){onLoad();} else {window.addEventListener("load",onLoad);}
-    })();
-
-    /* Branch -> Semester -> Notes */
-    const semesterListArray = ["Semester 1","Semester 2","Semester 3","Semester 4","Semester 5","Semester 6"];
-    const semesterData = { CSE:[...semesterListArray], ME:[...semesterListArray], EE:[...semesterListArray], ECE:[...semesterListArray], CE:[...semesterListArray], CHE:[...semesterListArray], IT:[...semesterListArray], AE:[...semesterListArray], MIN:[...semesterListArray], PT:[...semesterListArray]};
-    const notesData = {
-    "CSE": {
-      "Semester 1": [
-        { name: "C Notes", url: "notes/cse/sem1/c.pdf" },
-        { name: "Math Notes", url: "notes/cse/sem1/math.pdf" },
-        { name: "Physics Notes", url: "notes/cse/sem1/physics.pdf" }
-      ],
-      "Semester 2": [
-        { name: "Python Notes ✅", url: "https://drive.google.com/drive/folders/1KWVW-3OHnlRnA_DOyrkMUrjewXePZLRz" },
-        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
-        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
-        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
-        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
-      ]
-    },
-    "ME": {
-      "Semester 1": [
-        { name: "Mechanics Notes", url: "notes/me/sem1/mechanics.pdf" },
-        { name: "Math Notes", url: "notes/me/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
-        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
-        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
-        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
-      ]
-    },
-    "EE": {
-      "Semester 1": [
-        { name: "Basic Electrical Notes", url: "notes/ee/sem1/basic-electrical.pdf" },
-        { name: "Math Notes", url: "notes/ee/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
-        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
-        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
-        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
-      ]
-    },
-    "ECE": {
-      "Semester 1": [
-        { name: "Electronics Basics", url: "notes/ece/sem1/electronics.pdf" },
-        { name: "Math Notes", url: "notes/ece/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
-        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
-        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
-        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
-      ]
-    },
-    "CE": {
-      "Semester 1": [
-        { name: "Engineering Drawing", url: "notes/ce/sem1/drawing.pdf" },
-        { name: "Math Notes", url: "notes/ce/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
-        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
-        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
-        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
-      ]
-    },
-    "CHE": {
-      "Semester 1": [
-        { name: "Chemistry Notes", url: "notes/che/sem1/chemistry.pdf" },
-        { name: "Math Notes", url: "notes/che/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
-        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
-        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
-        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
-      ]
-    },
-    "IT": {
-      "Semester 1": [
-        { name: "C Programming", url: "notes/it/sem1/c.pdf" },
-        { name: "Math Notes", url: "notes/it/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
-        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
-        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
-        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
-      ]
-    },
-    "AE": {
-      "Semester 1": [
-        { name: "Aerodynamics Basics", url: "notes/ae/sem1/aero.pdf" },
-        { name: "Math Notes", url: "notes/ae/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
-        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
-        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
-        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
-      ]
-    },
-    "MIN": {
-      "Semester 1": [
-        { name: "Mining Basics", url: "notes/min/sem1/mining.pdf" },
-        { name: "Math Notes", url: "notes/min/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
-        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
-        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
-        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
-      ]
-    },
-    "PT": {
-      "Semester 1": [
-        { name: "Production Basics", url: "notes/pt/sem1/production.pdf" },
-        { name: "Math Notes", url: "notes/pt/sem1/math.pdf" }
-      ],
-      "Semester 2": [
-        { name: "FEEE Notes ✅", url: "https://drive.google.com/drive/folders/1NTwCXOe5Pw6yywrpdvPKGVKU3d59nP2o" },
-        { name: "ENV Notes ✅", url: "https://drive.google.com/drive/folders/1NW5unmGX_lOIF8DzvqMpL5piKas60n4j" },
-        { name: "Statistics Notes ✅", url: "https://drive.google.com/drive/folders/1NYyi2VjFC8yN6-G8cuVxB_RGsm0YN5fl" },
-        { name: "Project Management Notes ✅", url: "https://drive.google.com/drive/folders/1NIrwyfOYfrvQjWw7KbL23RB5t0Q_1Syo" }
-      ]
-    }
-  }; // ✅ CLOSE notesData here
-
-    window.showSemesters=function(branch){
-      document.getElementById("branchList").classList.add("hidden");
-      const semesterList=document.getElementById("semesterList"); semesterList.innerHTML="";
-      semesterData[branch].forEach(sem=>{
-        const li=document.createElement("li");
-        li.textContent=sem; li.onclick=()=>showNotes(branch,sem);
-        semesterList.appendChild(li);
-      });
-      document.getElementById("branchTitle").textContent=branch+" - Select Semester";
-      document.getElementById("semesterSection").classList.remove("hidden");
-    };
-    window.showNotes=function(branch,sem){
-      document.getElementById("semesterSection").classList.add("hidden");
-      const notesList=document.getElementById("notesList"); notesList.innerHTML="";
-      (notesData[branch]&&notesData[branch][sem]||[{name:"No Notes Available",url:"#"}]).forEach(note=>{
-        const li=document.createElement("li");
-        const a=document.createElement("a"); a.textContent=note.name; a.href=note.url; a.target="_blank";
-        li.appendChild(a); notesList.appendChild(li);
-      });
-      document.getElementById("semesterTitle").textContent=branch+" - "+sem+" Notes";
-      document.getElementById("notesSection").classList.remove("hidden");
-    };
-    window.goBack=function(level){
-      if(level==="branch"){document.getElementById("semesterSection").classList.add("hidden");document.getElementById("branchList").classList.remove("hidden");}
-      else if(level==="semester"){document.getElementById("notesSection").classList.add("hidden");document.getElementById("semesterSection").classList.remove("hidden");}
-    };
-
-    /* Navbar Toggle */
-    const navToggle=document.querySelector(".nav-toggle");
-    const navClose=document.querySelector(".nav-close");
-    const navOverlay=document.querySelector(".nav-overlay");
-    const body=document.body;
-    if(navToggle) navToggle.addEventListener("click",()=>body.classList.add("nav-open"));
-    if(navClose) navClose.addEventListener("click",()=>body.classList.remove("nav-open"));
-    if(navOverlay) navOverlay.addEventListener("click",()=>body.classList.remove("nav-open"));
-
-    /* Scroll To Top */
-    window.onscroll=function(){
-      let btn=document.getElementById("goTopBtn");
-      if(document.body.scrollTop>200||document.documentElement.scrollTop>200){btn.style.display="block";}
-      else{btn.style.display="none";}
-    };
-    function goToTop(){ window.scrollTo({top:0,behavior:"smooth"}); }
-    window.goToTop=goToTop;
-  </script>
 </body>
 </html>
