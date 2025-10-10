@@ -1,435 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Disclaimer</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disclaimer/Engg.Walle</title>
+ <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-    /* -------------------------
-   VARIABLES & BASE RESET
-   ------------------------- */
-:root {
-  --bg: #f7fbff;
-  --card: #ffffff;
-  --primary: #0b67ff;
-  --primary-600: #074dd6;
-  --muted: #6b7280;
-  --accent: #06b6d4;
-  --ff: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  --base: 1rem;
-  --scale: 1.125;
-  --container: 1200px;
-  --gap: 1.25rem;
-  --radius: 14px;
-  --card-shadow: 0 8px 30px rgba(15,23,42,0.08);
-}
-
-/* Reset */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
-  margin: 0;
-  font-family: var(--ff);
-  font-size: var(--base);
-  line-height: 1.45;
-  background: #d5f4ff9e;
-  color: #0b1220;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Container */
-.container {
-  width: 90%;
-  max-width: var(--container);
-  margin: 0 auto;
-}
-
-/* -------------------------
-   HEADER & NAV
-   ------------------------- */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(15,23,42,0.03);
-  z-index: 70;
-  transition: all .3s ease;
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  height: 72px;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: inherit;
-}
-.logo img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: var(--card-shadow);
-}
-.brand {
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.2px;
-}
-
-/* --- Overlay --- */
-.nav-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-  z-index: 60;
-}
-
-/* --- Slide-in Nav --- */
-.main-nav {
-  position: fixed;
-  top: 0;
-  right: -240px; /* start hidden on left */
-  width: 240px;
-  height: 1000rem;
-  background: var(--card);
-  box-shadow: 2px 0 25px rgba(0, 0, 0, 0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 4rem 1.25rem 1.25rem;
-  transition: right 0.3s ease;
-  z-index: 70;
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  margin: 0;
-  padding: 0;
-}
-.main-nav a {
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 600;
-  padding: 0.5rem 0;
-  transition: color .2s ease;
-}
-.main-nav a:hover { color: var(--primary); }
-
-.nav-open .main-nav { right: 0; }
-.nav-open .nav-overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* --- Close Button (Cut) --- */
-.nav-close {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--muted);
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  cursor: pointer;
-  transition: color 0.2s ease;
-}
-.nav-close:hover { color: var(--primary); }
-
-
-/* CTA group */
-.cta-group {
-  margin-left: auto;
-  display: flex;
-  gap: .2rem;
-  align-items: center;
-  border-radius:10px;
-  padding:-30px;
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: .6rem;
+.containery {
+  max-width: 900px;
+  margin: 30px auto;
+  background:none;
+  padding: 60px 30px;
   border-radius: 10px;
-  padding: .5rem 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all .25s ease;
 }
-.btn-primary {
-  background: linear-gradient(90deg, var(--primary), var(--primary-600));
-  color: white;
-  box-shadow: 0 8px 30px rgba(11,103,255,0.18);
+h1 {
+  text-align: left;
+  color: #0288d1;
+  margin-bottom: 20px;
 }
-.btn-outline {
-  background: transparent;
-  border-color: rgba(11,17,32,0.06);
-  color: var(--muted);
-}
-.btn.large {
-  padding: 0.95rem 1.25rem;
-  font-size: 1.05rem;
-}
-}
-/* Mobile toggle */
-.nav-toggle {
-  display: inline-flex;
-  background: none;
-  border: 0;
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: var(--muted);
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem;
-  transition: color 0.2s ease;
-}
-.nav-toggle:hover { color: var(--primary); }
+h2 { 
+     margin-top: 30px; 
+     color: #003366;
+     border-left:5px solid #ffbd15b5;
+     background:#eaffeab5;
+     padding-left:10px;
+     margin-bottom:10px;
+     
+      }
+p { line-height: 1.7; margin-bottom: 15px; }
 
-    h1{
-        padding-top:50px;
-        text-size:2rem;
-    }
-    h2 {
-        text-align: center;
-        padding-top:20px;
-        margin: 20px 0;
-        color: #003366;
-        text-size:1rem;
-        text-decoration:underline;
-    }
-    p{
-        text-size:0.5rem;
-    }
-    .section {
-        max-width: 1100px;
-        margin: auto;
-        padding: 20px;
-    }
-@media (min-width: 769px)
-{   .section{
-     display:flex;
-     flex-direction:column;
-    h1{
-        text-size:1rem;
-        padding-top:4rem;
-    }
-    h2{
-        text-size:1rem;
-        padding-top:0.2rem;
-    }
-    p{
-        text-size:0.5rem
-        padding-bottom:0.1rem;
-    }
-    }
-}
-        /* footer */
-  
-  .footer {
-    background-color: #222;
-    color: #ccc;
-    padding: 20px 40px;
-    margin-top:20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .footer-left {
-    max-width: 100%;
-    font-size: 0.9rem;
-  }
-  .footer-left p {
-    margin: 0 0 8px 0;
-  }
-  .footer-links {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .footer-links a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-  }
-  .footer-links a:hover {
-    color: #1e90ff;
-  }
-  .footer-right {
-    display: flex;
-    gap: 20px;
-    font-size: 1.4rem;
-  }
-  .footer-right a {
-    color: #ccc;
-    transition: color 0.3s ease;
-  }
-  .footer-right a:hover {
-    color: #1e90ff;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    .footer {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 15px;
-    }
-    .footer-left {
-      max-width: 100%;
-    }
-  }
 </style>
 </head>
 <body>
 
-</head>
-<body>
-  <!-- Header / Navbar -->
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="logo" href="index.html" aria-label="Homepage">
-        <img src="https://engineering-walle.github.io/01/logo.png" alt="Logo placeholder" />
-        <span href="index.html" class="brand">Engineering walle</span>
-      </a>
-<div class="cta-group">
-        <a class="btn btn-outline" href="loginsignup.html">Login</a>
-      </div>
-      <!-- Mobile toggle -->
-      <button class="nav-toggle" aria-label="Open navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+ <header>
+  <a href="index.html" class="logo" style="color:white;"><i class="fas fa-graduation-cap"style="color:#ff9d00;"></i> Engineering Walle </a>
 
-      <!-- Navigation -->
-      <nav class="main-nav" role="navigation" aria-label="Main Navigation">
-          
-        <!-- Cut/Close button -->
-        <button class="nav-close" aria-label="Close navigation">
-          <i class="fas fa-times"></i>
-        </button>
+  <!-- Hamburger for Mobile -->
+  <div class="hamburger" id="menu-btn"><span></span><span></span><span></span></div>
+</header>
 
-        <ul>
-          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="notice.html"><i class="fas fa-copy"></i> Notices</a></li>
-          <li><a href="jceceb.html"><i class="fas fa-pen"></i> Entrance Exam</a></li>
-          <li><a href="semnotes.html"><i class="fas fa-book"></i> Semesters Notes</a></li>
-          <li><a href="colleges.html"><i class="fas fa-university"></i> Govt. Colleges</a></li>
-          <li><a href="roadmaps.html"><i class="fas fa-map"></i> Career Roadmaps</a></li>
-          <li><a href="Quiz.html"><i class="fas fa-brain"></i> Quiz Center</a></li>
-        </ul>
-      </nav>
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
 
-      
-    </div>
-  </header>
+<!-- Mobile Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+               <li><a href="courses.html"><i class="fas fa-book-open"></i> Courses</a></li>
+               <li><a href="quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+               <li><a href="notes.html"><i class="fas fa-sticky-note"></i> Notes</a></li>
+               <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+</aside>
 
-  <!-- Overlay -->
-  
-  <div class="nav-overlay"></div>  
-  
-<div class="section">
-<h1>Disclaimer</h1>
-<p>
-Engineering Walle is a privately owned educational platform designed to provide information, resources, and support to engineering students and professionals. The website and its contents are provided "as is" and "as available" without any warranties, express or implied.
-</p><p>
-By accessing and using Engineering Walle, you acknowledge that you have read, understood, and agree to be bound by these terms and conditions. If you do not agree to these terms, please refrain from using the website.
-</p>
-<h2>Information Provided</h2>
-<p>
-The information provided on Engineering Walle is for general informational purposes only. While we strive to ensure the accuracy, completeness, and reliability of the information, we make no representations or warranties of any kind, express or implied. The information on this website may include technical inaccuracies or typographical errors, and we do not guarantee that the information is free from errors or omissions.
-</p>
-<h2>Limitation of Liability</h2>
-<p>
-In no event shall Engineering Walle, its owners, officers, directors, employees, agents, or affiliates be liable for any damages or losses arising out of or in connection with the use of this website, including but not limited to direct, indirect, incidental, consequential, punitive, or special damages. This limitation of liability includes, without limitation, damages for loss of profits, goodwill, use, data, or other intangible losses.
-</p>
-<h2>External Links</h2>
-<p>
-Engineering Walle may contain links to external websites or resources. These links are provided for convenience and do not imply endorsement or guarantee of the content of third-party websites. We are not responsible for the accuracy, completeness, or reliability of the information provided on external websites.
-</p>
-<h2>Intellectual Property</h2>
-<p>
-All content, including but not limited to text, graphics, logos, and images, on Engineering Walle is the property of Engineering Walle or its licensors and is protected by intellectual property laws. You agree not to reproduce, distribute, or display any content from this website without prior written permission from Engineering Walle.
-</p>
-<h2>Changes to Disclaimer</h2>
-<p>
-We reserve the right to modify or update these terms and conditions at any time without notice. Your continued use of Engineering Walle after any changes are made constitutes your acceptance of the new terms and conditions.
-</p>
-<h2>Contact Us</h2>
-<p>
-If you have any questions or concerns about this disclaimer or Engineering Walle, please contact us at [Email:-<a href="mailto:sumitkumar24256ce@gmail.com">sumitkumar24256@gmail.com</a>]. We will respond to your inquiry as soon as possible.
-</p><p>
-By using Engineering Walle, you acknowledge that you have read, understood, and agree to be bound by these terms and conditions.</p>
+<div class="containery">
+  <h1>Disclaimer</h1>
 
+  <h2>General Information</h2>
+  <p>The information provided by <strong>Etech</strong> on this website is for general informational purposes only. We make no guarantees regarding the accuracy or reliability of any information.</p>
+
+  <h2>Educational Advice Disclaimer</h2>
+  <p>All content on this site is for educational purposes only and should not be considered professional advice. Use of the content is at your own risk.</p>
+
+  <h2>External Links Disclaimer</h2>
+  <p>This site may contain links to third-party websites. We do not guarantee the accuracy or reliability of these sites.</p>
+
+  <h2>Affiliate Disclaimer</h2>
+  <p>Etech may earn commissions from affiliate links provided on this site at no additional cost to you.</p>
+
+  <h2>Consent</h2>
+  <p>By using this website, you consent to this disclaimer.</p>
+
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:smart420786@gmail.com.com">info@etech.com</a></p>
 </div>
-   <!-- Floating Feedback Button -->
-  <button id="openFeedbackBtn" class="floating-btn">
-    <i class="fas fa-pen-to-square"></i>
-  </button>
 
-  <!-- Feedback Form Popup -->
-  <div id="feedbackPopup" class="feedback-popup">
-    <div class="feedback-box">
-      <button id="closeFeedbackBtn" class="close-btn">❌</button>
-      <h2><i class="fas fa-pen-to-square"></i> Send Feedback</h2>
-      <form id="feedbackForm">
-        <label>
-          <i class="fas fa-envelope"></i> Your Email
-          <input type="email" id="email" required>
-        </label>
-        <label>
-          <i class="fas fa-comment"></i> Your Message
-          <textarea id="message" required></textarea>
-        </label>
-        <button type="submit" class="send-btn">
-          <i class="fas fa-paper-plane"></i> Send
-        </button>
-      </form>
-
-      <!-- Thank You Message -->
-      <div id="thankYouMsg" class="thank-you">
-        <i class="fas fa-check-circle"></i>
-        <p>Thank you for your feedback! 💙</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Feedbacks Display Section -->
-  <div id="feedbackList" class="feedback-list">
-    <h3>💬 Recent Feedbacks</h3>
-    <ul id="feedbackItems"></ul>
-  </div>
-
-  <footer class="footer">
+ <footer class="footer">
   <div class="footer-left"> 
     <div class="footer-links">
       <a href="disclaimer.html">Disclaimer</a>
@@ -438,8 +87,8 @@ By using Engineering Walle, you acknowledge that you have read, understood, and 
       <a href="about-us.html">About Us</a>    
     </div>
 <hr>
-    <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
-    <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato</strong></p>
+    <p>© 2025 <strong>E-tech</strong>. All rights reserved.</p>
+    <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
   </div>
 
   <div class="footer-right">
@@ -450,105 +99,10 @@ By using Engineering Walle, you acknowledge that you have read, understood, and 
     <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
   </div>
 </footer>
-
-<button onclick="goToTop()" id="goTopBtn"><i class="fas fa-arrow-up"></i></button>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAG7Je515RXgY40n1Pjzq1O2uP34PqjmmE",
-  authDomain: "feedback-ew.firebaseapp.com",
-  databaseURL: "https://feedback-ew-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "feedback-ew",
-  storageBucket: "feedback-ew.firebasestorage.app",
-  messagingSenderId: "230117928875",
-  appId: "1:230117928875:web:bdac18726583ab59112cee",
-  measurementId: "G-86S2XRHJGP"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
-const openBtn = document.getElementById("openFeedbackBtn");
-const closeBtn = document.getElementById("closeFeedbackBtn");
-const popup = document.getElementById("feedbackPopup");
-const feedbackForm = document.getElementById("feedbackForm");
-const thankYouMsg = document.getElementById("thankYouMsg");
-const feedbackItems = document.getElementById("feedbackItems");
-
-// Open/Close Popup
-openBtn.addEventListener("click", () => popup.style.display = "flex");
-closeBtn.addEventListener("click", () => popup.style.display = "none");
-
-// Submit Feedback
-feedbackForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
-
-  push(ref(db, "feedbacks"), {
-    email: email,
-    message: message,
-    timestamp: new Date().toISOString()
-  });
-
-  // Hide form, show thank you
-  feedbackForm.style.display = "none";
-  thankYouMsg.style.display = "block";
-
-  // Auto close after 2.5s
-  setTimeout(() => {
-    popup.style.display = "none";
-    feedbackForm.style.display = "block";
-    thankYouMsg.style.display = "none";
-    feedbackForm.reset();
-  }, 2500);
-});
-
-// Show Feedbacks (Latest First)
-onValue(ref(db, "feedbacks"), (snapshot) => {
-  feedbackItems.innerHTML = "";
-  snapshot.forEach((childSnapshot) => {
-    const data = childSnapshot.val();
-    const li = document.createElement("li");
-    li.classList.add("feedback-card");
-    li.innerHTML = `
-      <div class="feedback-header">
-        <span class="email">${data.email}</span>
-        <span class="time">${new Date(data.timestamp).toLocaleString()}</span>
-      </div>
-      <p class="message">${data.message}</p>
-    `;
-    feedbackItems.prepend(li);
-  });
-});
-</script>
-  <script src="script.js"></script>
-<script>
-
-// nav-tonggle
-
-document.addEventListener("DOMContentLoaded", function() {
-  const navToggle = document.querySelector(".nav-toggle");
-  const navClose = document.querySelector(".nav-close");
-  const navOverlay = document.querySelector(".nav-overlay");
-  const body = document.body;
-
-  navToggle.addEventListener("click", () => {
-    body.classList.add("nav-open");
-  });
-
-  navClose.addEventListener("click", () => {
-    body.classList.remove("nav-open");
-  });
-
-  navOverlay.addEventListener("click", () => {
-    body.classList.remove("nav-open");
-  });
-});
-
-</script>
-
+ <!-- Back to Top Button -->
+<a href="#" class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up"></i>
+</a>
+    <script src="script.js"></script>
 </body>
 </html>
