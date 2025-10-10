@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-tech/Diploma-Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220aa;
+      --glass:#ffffff10;
+      --accent:#6ee7b7;
+      --muted:#003366;
+      --glass2:#ffffff08;
+      --card-radius:14px;
+      --smooth:all 280ms cubic-bezier(.2,.9,.2,1);
+    }
+   
+    .notes-container{
+      max-width:1200px;
+      margin:80px 10px;
+      padding:18px;
+    }
+
+    .notes-header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .notes-logo{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      background:linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      border:2px solid black;
+      padding:10px 14px;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(124,58,237,0.12);
+    }
+    .logo .title{
+      font-weight:700;
+      font-size:18px;
+    }
+    .notes-header .subtitle{color:var(--muted); font-size:13px;}
+
+    .controls{
+      display:flex;
+      gap:12px;
+      margin:18px 0 28px 0;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .select, .search{
+      background:var(--glass);
+      border:3px inset black;
+      padding:10px 12px;
+      border-radius:10px;
+      color:inherit;
+      outline:none;
+      transition:var(--smooth);
+      min-width:160px;
+    }
+    .select:focus, .search:focus{transform:translateY(-3px); box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+
+    .search{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      border:3px inset black;
+      background:#fff;
+    }
+    .search input{
+      border:0;
+      outline:none;
+      color:inherit;
+      font-size:14px;
+      min-width:200px;
+    }
+
+    .notes-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+      gap:16px;
+    }
+
+    .note-card{
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      border-radius:var(--card-radius);
+      padding:14px;
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow:0 4px 15px rgba(2,6,23,0.6);
+      transform-origin:center;
+      transition:var(--smooth);
+    }
+    .note-card:hover{ transform: translateY(-6px) scale(1.01); }
+
+    .note-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    .note-icon{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      font-size:22px;
+      color:#0096ff;
+    }
+    .note-icon .fa, .note-icon .material-icons{
+      background:linear-gradient(90deg,#34d399,#60a5fa);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      font-size:22px;
+    }
+
+    .note-meta{
+      text-align:right;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .note-title{
+      font-weight:700;
+      margin:10px 0 6px 0;
+      font-size:16px;
+      line-height:1.2;
+    }
+    .note-sub{
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+
+    .note-tags{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;}
+    .tag{
+      background:rgba(255,255,255,0.03);
+      padding:6px 8px;
+      border-radius:8px;
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    .note-actions{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .btn{
+      padding:8px 10px;
+      border-radius:10px;
+      border:0;
+      cursor:pointer;
+      font-weight:600;
+      font-size:14px;
+      transition:var(--smooth);
+      background:linear-gradient(90deg,#1f6feb,#7c3aed);
+      color:white;
+      box-shadow:0 8px 20px rgba(28,124,255,0.12);
+    }
+    .btn.secondary{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
+      box-shadow:none;
+    }
+
+    /* empty state */
+    .empty{
+      text-align:center;
+      color:var(--muted);
+      margin-top:40px;
+      font-size:15px;
+    }
+
+    /* responsive header layout */
+    @media(max-width:700px){
+      .header{flex-direction:column; align-items:flex-start; gap:8px}
+      .controls{gap:8px}
+    }
+  </style>
+</head>
+<body>
+    <header>
+  <a href="index.html" class="logo" style="color:white;"><i class="fas fa-graduation-cap"style="color:#ff9d00;"></i> Engineering Walle </a>
+
+  <!-- Hamburger for Mobile -->
+  <div class="hamburger" id="menu-btn"><span></span><span></span><span></span></div>
+</header>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Mobile Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+               <li><a href="courses.html"><i class="fas fa-book-open"></i> Courses</a></li>
+               <li><a href="quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+               <li><a href="notes.html"><i class="fas fa-sticky-note"></i> Notes</a></li>
+               <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+</aside>
+
+    
+  <div class="notes-container">
+    <section class="notes-header">
+      <div class="notes-logo">
+        <i class="fa-solid fa-book-open" style="font-size:20px;color:white;opacity:0.95"></i>
+        <div>
+          <div class="title">Diploma / University Notes</div>
+          <div class="subtitle">All branches • All semesters • Downloadable notes</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="controls" role="toolbar" aria-label="filters">
+      <div class="search" title="Search notes">
+        <i class="fa-solid fa-magnifying-glass" style="opacity:0.8"></i>
+        <input id="searchInput" placeholder="Search by title, subject, or description" />
+      </div>
+
+      <select id="branchSelect" class="select" aria-label="Select branch">
+        <option value="all">All Branches</option>
+      </select>
+
+      <select id="semesterSelect" class="select" aria-label="Select semester">
+        <option value="all">All Semesters</option>
+      </select>
+
+      <select id="sortSelect" class="select" aria-label="Sort">
+        <option value="new">Newest</option>
+        <option value="old">Oldest</option>
+        <option value="title">Title A → Z</option>
+      </select>
+    </div>
+
+    <main>
+      <section id="notesGrid" class="notes-grid" aria-live="polite"></section>
+      <div id="emptyState" class="empty" style="display:none;">Koi note nahi mila — filter hata kar dobara try karo.</div>
+    </main>
+  </div>
+ 
+ 
+ <footer class="footer">
+  <div class="footer-left"> 
+    <div class="footer-links">
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="privacy-security.html">Privacy & Security</a>
+      <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
+      <a href="about-us.html">About Us</a>    
+    </div>
+<hr>
+    <p>© 2025 <strong>E-tech</strong>. All rights reserved.</p>
+    <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
+  </div>
+
+  <div class="footer-right">
+    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
+    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</footer>
+ 
+  <script>
+    // --- SAMPLE DATA: replace / extend with your own notes ---
+    // note.icon: can be a Font Awesome class (fa-solid fa-file-pdf) or a material icon name prefixed with "mi:" like "mi:download"
+    const NOTES = [
+ 
+  // ----------------- Semester 1 (Common) -----------------
+  {
+    id: 1,
+    title: "Sem 1 (Common) - Fundamental of Computers",
+    subject: "FOC",
+    branch: "All",
+    semester: "1",
+    description: "Basics of computer fundamentals.",
+    url: "#",
+    date: "2024-07-12",
+    icon: "fa-solid fa-desktop", // Computer Icon
+    color: "#EAF6FF" // Light Blue
+  },
+  {
+    id: 2,
+    title: "Sem 1 (Common) - Engineering Mathematics",
+    subject: "Mathematics",
+    branch: "All",
+    semester: "1",
+    description: "Handwritten notes and solved problems.",
+    url: "#",
+    date: "2023-11-05",
+    icon: "fa-solid fa-square-root-variable", // Math Icon
+    color: "#FFFBEA" // Light Cream
+  },
+  {
+    id: 3,
+    title: "Sem 1 (Common) - Engineering Physics",
+    subject: "Physics",
+    branch: "All",
+    semester: "1",
+    description: "Basics of engineering physics.",
+    url: "#",
+    date: "2023-09-22",
+    icon: "fa-solid fa-atom", // Physics Icon
+    color: "#E8FFF3" // Light Mint
+  },
+  {
+    id: 4,
+    title: "Sem 1 (Common) - Engineering Chemistry",
+    subject: "Chemistry",
+    branch: "All",
+    semester: "1",
+    description: "Fundamentals of chemistry with notes.",
+    url: "#",
+    date: "2023-09-25",
+    icon: "fa-solid fa-flask", // Chemistry Icon
+    color: "#FFF0F5" // Lavender Blush
+  },
+  {
+    id: 5,
+    title: "Sem 1 (Common) - Communication Skills",
+    subject: "English",
+    branch: "All",
+    semester: "1",
+    description: "Notes on grammar, writing, and vocabulary.",
+    url: "#",
+    date: "2023-09-28",
+    icon: "fa-solid fa-language", // Language Icon
+    color: "#FFF3E6" // Light Peach
+  },
+
+  
+  // ----------------- Semester 2 (Common for All Branches) -----------------
+  {
+    id: 1,
+    title: "Sem 2 (Common) - Engineering Drawing",
+    subject: "Engineering Drawing",
+    branch: "All",
+    semester: "2",
+    description: "Dimensioning, projections and solved examples.",
+    url: "#",
+    date: "2024-03-18",
+    icon: "fa-solid fa-pencil-ruler",
+    color: "#F9F0FF"
+  },
+  {
+    id: 2,
+    title: "Sem 2 (Common) - Applied Mathematics II",
+    subject: "Mathematics II",
+    branch: "All",
+    semester: "2",
+    description: "Advanced concepts in mathematics.",
+    url: "#",
+    date: "2024-02-22",
+    icon: "fa-solid fa-square-root-variable",
+    color: "#FFFBEA"
+  },
+  {
+    id: 3,
+    title: "Sem 2 (Common) - Environmental Sustainability",
+    subject: "EVS",
+    branch: "All",
+    semester: "2",
+    description: "Environment and sustainable development concepts.",
+    url: "#",
+    date: "2024-02-10",
+    icon: "fa-solid fa-leaf",
+    color: "#E8FFF3"
+  },
+
+  // ----------------- Semester 2 (CSE) -----------------
+  {
+    id: 4,
+    title: "CSE Sem 2 - Python Programming",
+    subject: "Python",
+    branch: "CSE",
+    semester: "2",
+    description: "Basic programming in Python.",
+    url: "#",
+    date: "2025-01-02",
+    icon: "fa-brands fa-python",
+    color: "#EAF6FF"
+  },
+  {
+    id: 5,
+    title: "CSE Sem 2 - Digital Electronics",
+    subject: "Digital Electronics",
+    branch: "CSE",
+    semester: "2",
+    description: "Basics of logic gates, flip-flops, counters.",
+    url: "#",
+    date: "2024-02-15",
+    icon: "fa-solid fa-microchip",
+    color: "#FFF3E6"
+  },
+
+  // ----------------- Semester 2 (EEE) -----------------
+  {
+    id: 6,
+    title: "EEE Sem 2 - Electrical Technology",
+    subject: "Electrical Technology",
+    branch: "EEE",
+    semester: "2",
+    description: "Notes on basic electrical circuits and machines.",
+    url: "#",
+    date: "2024-02-14",
+    icon: "fa-solid fa-bolt",
+    color: "#E8FFF3"
+  },
+  {
+    id: 7,
+    title: "EEE Sem 2 - Applied Physics II",
+    subject: "Physics II",
+    branch: "EEE",
+    semester: "2",
+    description: "Advanced concepts in applied physics.",
+    url: "#",
+    date: "2024-02-05",
+    icon: "fa-solid fa-atom",
+    color: "#EAF6FF"
+  },
+
+  // ----------------- Semester 2 (ME) -----------------
+  {
+    id: 8,
+    title: "ME Sem 2 - Workshop Technology",
+    subject: "Workshop",
+    branch: "ME",
+    semester: "2",
+    description: "Workshop practices and machine tools.",
+    url: "#",
+    date: "2024-01-20",
+    icon: "fa-solid fa-hammer",
+    color: "#FFFBEA"
+  },
+  {
+    id: 9,
+    title: "ME Sem 2 - Applied Mechanics",
+    subject: "Mechanics",
+    branch: "ME",
+    semester: "2",
+    description: "Forces, equilibrium and structural analysis.",
+    url: "#",
+    date: "2024-02-12",
+    icon: "fa-solid fa-cogs",
+    color: "#F9F0FF"
+  },
+
+  // ----------------- Semester 3 (Common for All Branches) -----------------
+  {
+    id: 10,
+    title: "Sem 3 (Common) - Project Management Skills",
+    subject: "PMS",
+    branch: "All",
+    semester: "3",
+    description: "Planning, scheduling and management concepts.",
+    url: "#",
+    date: "2024-06-01",
+    icon: "fa-solid fa-clipboard-list",
+    color: "#FFF3E6"
+  },
+  {
+    id: 11,
+    title: "Sem 3 (Common) - Statistics & Analytics",
+    subject: "Statistics",
+    branch: "All",
+    semester: "3",
+    description: "Probability, distribution, and analytics basics.",
+    url: "#",
+    date: "2024-06-10",
+    icon: "fa-solid fa-chart-bar",
+    color: "#EAF6FF"
+  },
+
+  // ----------------- Semester 3 (CSE) -----------------
+  {
+    id: 12,
+    title: "CSE Sem 3 - Data Structures",
+    subject: "DS",
+    branch: "CSE",
+    semester: "3",
+    description: "Notes with solved programs on Data Structures.",
+    url: "#",
+    date: "2024-06-15",
+    icon: "fa-solid fa-database",
+    color: "#FFFBEA"
+  },
+  {
+    id: 13,
+    title: "CSE Sem 3 - Computer Networking",
+    subject: "Networking",
+    branch: "CSE",
+    semester: "3",
+    description: "Handwritten notes with full explanation.",
+    url: "#",
+    date: "2022-12-08",
+    icon: "fa-solid fa-network-wired",
+    color: "#F9F0FF"
+  },
+
+  // ----------------- Semester 3 (EEE) -----------------
+  {
+    id: 14,
+    title: "EEE Sem 3 - Electronics",
+    subject: "Electronics",
+    branch: "EEE",
+    semester: "3",
+    description: "Basics of diodes, transistors, and circuits.",
+    url: "#",
+    date: "2024-07-01",
+    icon: "fa-solid fa-microchip",
+    color: "#EAF6FF"
+  },
+  {
+    id: 15,
+    title: "EEE Sem 3 - Electrical Machines",
+    subject: "Machines",
+    branch: "EEE",
+    semester: "3",
+    description: "Transformers, motors and generators.",
+    url: "#",
+    date: "2024-06-25",
+    icon: "fa-solid fa-bolt",
+    color: "#E8FFF3"
+  },
+
+  // ----------------- Semester 3 (ME) -----------------
+  {
+    id: 16,
+    title: "ME Sem 3 - Thermodynamics",
+    subject: "Thermodynamics",
+    branch: "ME",
+    semester: "3",
+    description: "Concepts of heat, work, and energy systems.",
+    url: "#",
+    date: "2024-06-18",
+    icon: "fa-solid fa-fire",
+    color: "#FFFBEA"
+  },
+  {
+    id: 17,
+    title: "ME Sem 3 - Machine Drawing",
+    subject: "Machine Drawing",
+    branch: "ME",
+    semester: "3",
+    description: "Assembly and detailed machine drawings.",
+    url: "#",
+    date: "2024-07-03",
+    icon: "fa-solid fa-drafting-compass",
+    color: "#F9F0FF"
+  }
+      // add more...
+    ];
+
+    // --- Utility / Rendering code ---
+    const notesGrid = document.getElementById('notesGrid');
+    const branchSelect = document.getElementById('branchSelect');
+    const semesterSelect = document.getElementById('semesterSelect');
+    const searchInput = document.getElementById('searchInput');
+    const sortSelect = document.getElementById('sortSelect');
+    const emptyState = document.getElementById('emptyState');
+
+    let data = [...NOTES]; // working copy — replace by dynamic load if available
+
+    // populate branch & semester choices dynamically
+    function populateFilters(){
+      const branches = Array.from(new Set(data.map(n => n.branch))).sort();
+      const semesters = Array.from(new Set(data.map(n => n.semester))).sort((a,b)=>+a-+b);
+
+      for(const b of branches){
+        const o = document.createElement('option'); o.value=b; o.textContent=b; branchSelect.appendChild(o);
+      }
+      for(const s of semesters){
+        const o = document.createElement('option'); o.value=s; o.textContent = "Semester " + s; semesterSelect.appendChild(o);
+      }
+    }
+
+    // render list
+    function renderNotes(list){
+      notesGrid.innerHTML = '';
+      if(list.length === 0){
+        emptyState.style.display = 'block';
+        return;
+      } else emptyState.style.display = 'none';
+
+      for(const note of list){
+        const card = document.createElement('article');
+        card.className = 'note-card';
+        card.innerHTML = `
+          <div class="note-top">
+            <div class="note-icon">
+              ${renderIconHTML(note.icon)}
+            </div>
+            <div class="note-meta">
+              <div>${note.branch} • Sem ${note.semester}</div>
+              <div style="font-size:11px;color:var(--muted)">${formatDate(note.date)}</div>
+            </div>
+          </div>
+          <div class="note-title">${escapeHTML(note.title)}</div>
+          <div class="note-sub">${escapeHTML(note.subject)} — ${escapeHTML(note.description)}</div>
+          <div class="note-tags">
+            <div class="tag">${note.branch}</div>
+            <div class="tag">Semester ${note.semester}</div>
+          </div>
+          <div class="note-actions">
+            <div style="display:flex;gap:8px">
+              <a class="btn" href="${note.url}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download" style="margin-right:8px"></i>Download</a>
+              <button class="btn secondary" onclick="viewDetails(${note.id})">Details</button>
+            </div>
+            <div style="font-size:12px;color:var(--muted)">ID: ${note.id}</div>
+          </div>
+        `;
+        notesGrid.appendChild(card);
+      }
+    }
+
+    // helper: render icon HTML from icon descriptor
+    function renderIconHTML(icon){
+      if(!icon) return '<i class="fa-solid fa-file-lines"></i>';
+      if(icon.startsWith('mi:')){
+        const name = icon.split(':')[1];
+        return `<span class="material-icons" aria-hidden="true">${name}</span>`;
+      } else {
+        // assume Font Awesome class string
+        return `<i class="${icon}" aria-hidden="true"></i>`;
+      }
+    }
+
+    function formatDate(d){
+      try{
+        const dt = new Date(d);
+        if(isNaN(dt)) return d;
+        return dt.toLocaleDateString();
+      } catch(e){ return d; }
+    }
+
+    // search & filter
+    function applyFilters(){
+      const q = searchInput.value.trim().toLowerCase();
+      const branch = branchSelect.value;
+      const sem = semesterSelect.value;
+      const sort = sortSelect.value;
+
+      let filtered = data.filter(n=>{
+        if(branch!=='all' && n.branch !== branch) return false;
+        if(sem!=='all' && n.semester !== sem) return false;
+        if(q){
+          const hay = (n.title + ' ' + n.subject + ' ' + n.description).toLowerCase();
+          return hay.includes(q);
+        }
+        return true;
+      });
+
+      if(sort === 'new') filtered.sort((a,b)=> new Date(b.date) - new Date(a.date));
+      else if(sort === 'old') filtered.sort((a,b)=> new Date(a.date) - new Date(b.date));
+      else if(sort === 'title') filtered.sort((a,b)=> a.title.localeCompare(b.title));
+
+      renderNotes(filtered);
+    }
+
+    // small detail view (simple alert — you can replace with modal)
+    function viewDetails(id){
+      const n = data.find(x=>x.id===id);
+      if(!n) return alert("Note not found");
+      alert(`Title: ${n.title}\nSubject: ${n.subject}\nBranch: ${n.branch}\nSemester: ${n.semester}\nDate: ${n.date}\n\nDescription:\n${n.description}`);
+    }
+    window.viewDetails = viewDetails; // expose for onclick
+
+    // basic XSS safe escape
+    function escapeHTML(s){ return String(s).replace(/[&<>"']/g, (m)=> ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+    // init
+    (function init(){
+      populateFilters();
+      renderNotes(data);
+      // event listeners
+      searchInput.addEventListener('input', debounce(applyFilters,200));
+      branchSelect.addEventListener('change', applyFilters);
+      semesterSelect.addEventListener('change', applyFilters);
+      sortSelect.addEventListener('change', applyFilters);
+    })();
+
+    // debounce util
+    function debounce(fn,ms=200){
+      let t;
+      return function(...a){ clearTimeout(t); t = setTimeout(()=>fn.apply(this,a), ms); }
+    }
+
+    // OPTIONAL: function to add notes dynamically (for admin/editor usage)
+    // You can call addNote({title,subject,branch,semester,description,url,date,icon})
+    function addNote(obj){
+      obj.id = (data.length? Math.max(...data.map(x=>x.id))+1 : 1);
+      data.unshift(obj);
+      // update filters (if new branch/sem)
+      clearSelectOptions();
+      populateFilters();
+      applyFilters();
+    }
+    // helper to clear extra options (keeps "All")
+    function clearSelectOptions(){
+      branchSelect.querySelectorAll('option:not([value="all"])').forEach(e=>e.remove());
+      semesterSelect.querySelectorAll('option:not([value="all"])').forEach(e=>e.remove());
+    }
+
+    // Example of adding a new note programmatically:
+    // addNote({title:"New Note",subject:"X",branch:"CSE",semester:"6",description:"...",url:"#",date:"2025-09-12",icon:"fa-solid fa-file"});
+  </script>
+   <!-- Back to Top Button -->
+<a href="#" class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up"></i>
+</a>
+  <script src="script.js"></script>
+</body>
+      </html>
