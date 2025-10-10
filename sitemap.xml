@@ -1,9 +1,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://engineering-walle.github.io/01/</loc></url>
-  <url><loc>https://engineering-walle.github.io/01/semnotes.html</loc></url>
-  <url><loc>https://engineering-walle.github.io/01/roadmaps.html</loc></url>
-  <url><loc>https://engineering-walle.github.io/01/disclaimer.html</loc></url>
- <url><loc>https://engineering-walle.github.io/01/privacy-security.html</loc></url>
+  <url><loc>https://engineering-walle.github.io/01/notes.html</loc></url>
+  <url><loc>https://engineering-walle.github.io/01/quiz.html</loc></url>
+  <url><loc>https://engineering-walle.github.io/01/diplomanotes.html</loc></url>
+ <url><loc>https://engineering-walle.github.io/01/courses.html</loc></url>
+
+<url><loc>https://engineering-walle.github.io/01/contact.html</loc></url>
 
 <url><loc>https://engineering-walle.github.io/01/about-us.html</loc></url>
   <!-- add other pages too -->
