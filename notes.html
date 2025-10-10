@@ -1,65 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engg.Walle/Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+        <header>
+  <a href="index.html" class="logo" style="color:white;"><i class="fas fa-graduation-cap"style="color:#ff9d00;"></i> Engineering Walle </a>
 
-  <!-- Title -->
-  <title>Diploma Notes | Syllabus | PYQs</title>
+  <!-- Hamburger for Mobile -->
+  <div class="hamburger" id="menu-btn"><span></span><span></span><span></span></div>
+</header>
 
-  <!-- Meta Description -->
-  <meta name="description" content="Engineering Walle provides free DIPLOMA & B-TECH Notes, Previous Year Questions (PYQs), Syllabus, Important Questions,Career Roadmaps for all branches and all important resources to make easy for learning.">
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
 
-  <!-- Meta Keywords -->
+<!-- Mobile Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+               <li><a href="courses.html"><i class="fas fa-book-open"></i> Courses</a></li>
+               <li><a href="quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
+               <li><a href="notes.html" class="active"><i class="fas fa-sticky-note"></i> Notes</a></li>
+               <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>
+</aside>
 
-    <meta name="keywords" content="Engineers,engineering,diploma,jut,jharkhand polytechnic,poletechnic walle,Jharkhand diploma notes,diploma wallah,diplomawallah,diploma walla,diploma wallah notes,diploma wallah website, diploma question banks,diploma e books,polytechnic materials, polytechnic wallah, polytechnic study materials, JUT syllabus, free diploma books, engineering,diploma resources MBSTE diploma notes, SBSTE notes PDF, DTEK board notes, Bihar diploma notes, Diploma study materials, Polytechnic notes download, MBSTE study notes, SBSTE polytechnic study material, DTEK semester notes, diploma 1st sem notes, diploma 2nd sem notes, diploma 3rd sem notes, diploma 4th sem notes, polytechnic handwritten notes, diploma PDF notes free download, diploma notes, diploma syllabus, diploma PYQ, important questions, engineering diploma study material, free diploma notes, diploma exam preparation">
+    <main>
+        <section class="page-header">
+            <h1>Notes & Resources</h1>
+            <p>Download helpful notes, cheat sheets, and more.</p>
+        </section>
 
-  <!-- Author -->
-  <meta name="author" content="Engineering Walle">
+<!-- notes for diploma and btech -->
+     <section class="notes-container">       
+       <h2>Diploma and Btech Assets ( JUT )</h2>                  
+<div class="study-container">
 
-  <!-- Open Graph (for social media previews) -->
-  <meta property="og:title" content="Engineering Walle | Diploma Notes, Syllabus, PYQs & Career Roadmap">
-  <meta property="og:description" content="Free Diploma Notes, PYQs, Syllabus, Important Questions, and Career Roadmaps for all branches.">
-  <meta property="og:url" content="https://engineering-walle.github.io/01/semnotes.html">
-  <meta property="og:type" content="website">
+  <!-- Notes -->
+  <div class="study-block">
+    <input type="checkbox" id="notes">
+    <label class="study-header" for="notes">
+      <span><span class="material-icons">menu_book</span> Notes</span>
+      <span class="material-icons">expand_more</span>
+    </label>
+    <div class="study-content">
+     <p>Download subject-wise PDF Notes with clear explanations and easy formatting.</p>
+     <button class="btn2" ><a href="diplomanotes.html" style="text-decoration: none; color:white;">Diploma</a></button>
+          <button class="btn2">B-tech</button>
+    </div>
+  </div>
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Engineering Walle | Diploma Notes, Syllabus, PYQs & Career Roadmap">
-  <meta name="twitter:description" content="Free Diploma Notes, PYQs, Syllabus, Important Questions, and Career Roadmaps for all branches.">
+  <!-- Syllabus -->
+  <div class="study-block">
+    <input type="checkbox" id="syllabus">
+    <label class="study-header" for="syllabus">
+      <span><span class="material-icons">assignment</span> Syllabus</span>
+      <span class="material-icons">expand_more</span>
+    </label>
+    <div class="study-content">
+     <p> Complete updated semester-wise syllabus for all subjects in organized format.</p>
+      <button class="btn2">Diploma 1st sem</button>
+       <button class="btn2">Diploma 2nd sem</button>
+        <button class="btn2">Diploma 3rd sem</button>
+         <button class="btn2">Diploma 4th sem</button>
+          <button class="btn2">Diploma 5th sem</button>
+           <button class="btn2">Diploma 6th sem</button>
+          
+    </div>
+  </div>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- PYQs -->
+  <div class="study-block">
+    <input type="checkbox" id="pyqs">
+    <label class="study-header" for="pyqs">
+      <span><span class="material-icons">description</span> PYQs</span>
+      <span class="material-icons">expand_more</span>
+    </label>
+    <div class="study-content">
+      <p>Previous year question papers with solutions for practice and preparation.</p>
+      <button class="btn2">Diploma sem1 (2024)</button>
+          <button class="btn2">B-tech sem1 (2024)</button>
+          <button class="btn2">Diploma sem1 (2025)</button>
+          <button class="btn2">B-tech sem1 (2024)</button>
+          <button class="btn2">Diploma sem2 (2024)</button>
+          <button class="btn2">B-tech sem2 (2024)</button>
+          
+          
+    </div>
+  </div>
 
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
- .containers{
-     max-width:1200px;
-     margin:40px auto;
-     padding:10px 20px;
-     }
-    h1,h2{margin-bottom:25px;color:#2f3640;text-align:center;}
+  <!-- Important Questions -->
+  <div class="study-block">
+    <input type="checkbox" id="imp">
+    <label class="study-header" for="imp">
+      <span><span class="material-icons">star</span> Important Questions</span>
+      <span class="material-icons">expand_more</span>
+    </label>
+    <div class="study-content">
+      <p>Handpicked important questions for exams to maximize your score efficiently.</p>
+      <button class="btn2">Diploma 1st sem</button>
+       <button class="btn2">Diploma 2nd sem</button>
+        <button class="btn2">Diploma 3rd sem</button>
+         <button class="btn2">Diploma 4th sem</button>
+          <button class="btn2">Diploma 5th sem</button>
+           <button class="btn2">Diploma 6th sem</button>
+    </div>
+  </div>
 
-    /* Grid Cards */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
+</div>
 
-    .card{
-      background:#ffffff; border-radius:15px; padding:25px 20px;
-      text-align:center; cursor:pointer; transition:0.3s;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    }
-    .card:hover{transform:translateY(-8px);box-shadow:0 12px 25px rgba(0,0,0,0.15);}
-    .card i{font-size:40px;margin-bottom:15px;color:#2f3640;}
-    .card span{display:block;font-weight:600;font-size:18px;color:#2f3640;}
+            <h2>Web Development</h2>
+            <ul class="resource-list">
+                <li><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTc9VSVXdnGHgVewGX_m_k00bWRMiPLt4kPj0xTImvRtAZGn0F-m7ukWUE-kJwKap4aqU&usqp=CAU" download>
+                    <i class="fas fa-file-pdf"></i> HTML5 Elements Cheat Sheet
+                    <span>Download</span>
+                </a></li>
+                <li><a href="https://i.pinimg.com/1200x/5f/34/32/5f3432db4937954c542dd834a8e07c37.jpg" download>
+                    <i class="fas fa-file-pdf"></i> CSS3 Cheat Sheet
+                    <span>Download</span>
+                </a></li>
+                 <li><a href="#" download>
+                    <i class="fas fa-file-video"></i> JavaScript DOM Manipulation Tutorial
+                    <span>Watch</span>
+                </a></li>
+            </ul>
 
-    /* Semester Cards */
-    .semester-card{background:#2f3640;color:#fff;padding:20px;border-radius:12px;font-weight:600;transition:0.3s;}
-    .semester-card:hover{background:#ff9f1c;color:#222;}
+            <h2>Data Science</h2>
+            <ul class="resource-list">
+                <li><a href="#" download>
+                    <i class="fas fa-file-pdf"></i> Python Pandas Quick Reference
+                    <span>Download</span>
+                </a></li>
+                 <li><a href="#" download>
+                    <i class="fas fa-file-alt"></i> Machine Learning Algorithms Overview
+                    <span>Download</span>
+                </a></li>
+            </ul>
+        </section>
+    </main>
 
-    /* Notes Cards */
-    .note-card{background:#fff;padding:15px;border-radius:12px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.08);transition:0.3s;}
+     <footer class="footer">
+  <div class="footer-left"> 
+    <div class="footer-links">
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="privacy-security.html">Privacy & Security</a>
+      <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
+      <a href="about-us.html">About Us</a>    
+    </div>
+<hr>
+    <p>© 2025 <strong>E-tech</strong>. All rights reserved.</p>
+    <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
+  </div>
+
+  <div class="footer-right">
+    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
+    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</footer>
+ <!-- Back to Top Button -->
+<a href="#" class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up"></i>
+</a>
+    <script src="script.js"></script>
+</body>
+</html>    .note-card{background:#fff;padding:15px;border-radius:12px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.08);transition:0.3s;}
     .note-card a{display:block;text-decoration:none;color:#2f3640;font-weight:600;}
     .note-card:hover{transform:translateY(-5px);box-shadow:0 8px 18px rgba(0,0,0,0.12);}
 
