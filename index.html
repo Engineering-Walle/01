@@ -152,14 +152,40 @@
   }
   </script>
 
-<style>
-.spin {
-  animation: spin 2s linear infinite;
-}
-@keyframes spin {
-  100% { transform: rotate(360deg); }
-}
-</style>
+  <!-- ✅ ⭐ Review & Rating Snippet (Directly visible in search results) -->
+  <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "Product",
+   "name": "Engineering Walle Platform",
+   "image": "https://engineering-walle.github.io/01/logo.png",
+   "description": "Free Diploma Notes, Syllabus, PYQs, and Career Roadmaps for Engineering Students.",
+   "brand": {
+     "@type": "Brand",
+     "name": "Engineering Walle"
+   },
+   "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "4.9",
+     "reviewCount": "186"
+   },
+   "review": [{
+     "@type": "Review",
+     "author": { "@type": "Person", "name": "Aarav" },
+     "reviewBody": "One of the best websites for Diploma students. Everything is well organized and free!",
+     "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+   }]
+  }
+  </script>
+
+  <style>
+  .spin {
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+  </style>
 </head>
 
 <body>
