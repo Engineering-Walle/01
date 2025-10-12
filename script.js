@@ -1,8 +1,13 @@
- // === Hide Preloader After Page Loads ===
-    window.addEventListener("load", function() {
-      const preloader = document.getElementById("preloader");
-      preloader.classList.add("hidden");
-    });
+ // main.js
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    preloader.classList.add("hide");
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 900); // Same as CSS transition duration
+  }
+});
 
 
 // --- Sidebar Hamburger Toggle ---
