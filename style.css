@@ -33,8 +33,8 @@
 }
 
 .loader-icon {
-  font-size: 60px;
-  color: orange;
+  font-size: 30px;
+  color:#ff9d00;
   animation: spin 2s linear infinite;
 }
 
