@@ -34,7 +34,7 @@
 
 .loader-icon {
   font-size: 60px;
-  color: #fffa840;
+  color: #000;
   animation: spin 2s linear infinite;
 }
 
