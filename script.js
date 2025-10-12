@@ -1,3 +1,9 @@
+ // === Hide Preloader After Page Loads ===
+    window.addEventListener("load", function() {
+      const preloader = document.getElementById("preloader");
+      preloader.classList.add("hidden");
+    });
+
 
 // --- Sidebar Hamburger Toggle ---
 const menuBtn = document.getElementById("menu-btn");
