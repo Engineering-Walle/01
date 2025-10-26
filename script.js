@@ -9,6 +9,19 @@ window.addEventListener("load", () => {
   }
 });
 
+// Job Read More / Show Less
+document.querySelectorAll('.jobupdates-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.jobupdates-card');
+    card.classList.toggle('expanded');
+
+    if (card.classList.contains('expanded')) {
+      btn.textContent = "Show Less";
+    } else {
+      btn.textContent = "Read More";
+    }
+  });
+});
 
 // --- Sidebar Hamburger Toggle ---
 const menuBtn = document.getElementById("menu-btn");
