@@ -1,4 +1,5 @@
- // main.js
+ // ==== main.js ====
+
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   if (preloader) {
@@ -9,21 +10,8 @@ window.addEventListener("load", () => {
   }
 });
 
-// Job Read More / Show Less
-document.querySelectorAll('.jobupdates-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const card = btn.closest('.jobupdates-card');
-    card.classList.toggle('expanded');
+// ==== Sidebar Hamburger Toggle ====
 
-    if (card.classList.contains('expanded')) {
-      btn.textContent = "Show Less";
-    } else {
-      btn.textContent = "Read More";
-    }
-  });
-});
-
-// --- Sidebar Hamburger Toggle ---
 const menuBtn = document.getElementById("menu-btn");
 const sidebar = document.getElementById("sidebar");
 const overlay = document.getElementById("overlay");
@@ -40,7 +28,8 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
 });
 
-// --- Contact Form Validation ---
+// ==== Contact Form Validation ====
+
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
@@ -67,17 +56,19 @@ if (contactForm) {
   });
 }
 
-// --- Email Validation Function ---
+// ==== Email Validation Function ====
+
 function validateEmail(email) {
   const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   return re.test(email.toLowerCase());
 }
 
-// --- Back to Top Button ---
+// ==== Back to Top Button ====
+
 const backToTop = document.getElementById("backToTop");
 
 if (backToTop) {
-  // Show button on scroll
+  // ===Show button on scroll===
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
       backToTop.classList.add("show");
@@ -86,7 +77,7 @@ if (backToTop) {
     }
   });
 
-  // Smooth scroll to top
+  // ===Smooth scroll to top===
   backToTop.addEventListener("click", (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -95,6 +86,8 @@ if (backToTop) {
     });
   });
 }
+
+// ==== chatbase bot ====
 
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="PqFanbRcUsOq5CQLImFkx";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 
