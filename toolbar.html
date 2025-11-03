@@ -1,0 +1,174 @@
+<!-- 🌟 Smart FAB Toolbar + Go To Top Button -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  .fabx-container {
+    position: fixed;
+    bottom: 15px;
+    right: 8px;
+    width: 70px;
+    z-index: 100;
+  }
+
+  .fabx-container input {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    opacity: 0;
+    cursor: pointer;    
+    z-index: 3;
+  }
+
+  .fabx-main {
+    width: 60px;
+    height: 60px;
+    background: rgba(20,20,20,0.8);
+    border-radius: 50%;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .fabx-main i {
+    color: white;
+    font-size: 25px;
+    transition: transform 0.4s ease;
+  }
+
+  .fabx-container input:checked ~ .fabx-main {
+    transform: rotate(360deg);
+  }
+
+  /* Actions (sub-buttons) */
+  .fabx-actions {
+    position: absolute;
+    bottom: 75px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .fabx-tooltip {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.4s ease;
+  }
+  .fabx-tooltip:nth-child(1) { transition-delay: 0.4s; }
+  .fabx-tooltip:nth-child(2) { transition-delay: 0.3s; }
+  .fabx-tooltip:nth-child(3) { transition-delay: 0.2s; }
+  .fabx-tooltip:nth-child(4) { transition-delay: 0.1s; }
+
+  .fabx-container input:checked ~ .fabx-actions .fabx-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Buttons inside */
+  .fabx-btn {
+    width: 50px;
+    height: 50px;
+    background: rgba(10,10,10,0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(120,144,251,0.3);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .fabx-btn:hover {
+    transform: scale(1.15);
+    background: rgba(120,144,251,0.4);
+    box-shadow: 0 0 20px rgba(120,144,251,0.6);
+  }
+
+  .fabx-btn i {
+    color: #fff;
+    font-size: 22px;
+  }
+
+  .fabx-tiptext {
+    visibility: hidden;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(20,20,20,0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, right 0.3s ease;
+    font-size: 10px;
+  }
+  .fabx-tooltip:hover .fabx-tiptext {
+    visibility: visible;
+    opacity: 1;
+    right: 80px;
+  }
+
+  /* Go to top mode */
+  .fabx-container.goTopMode .fabx-main {
+    background: #fff;
+  }
+  .fabx-container.goTopMode .fabx-main i {
+    transform: rotate(0deg);
+    font-size: 22px;
+    color: rgba(20,20,20,0.8);
+  }
+  .fabx-container.goTopMode input {
+    pointer-events: none;
+  }
+  .fabx-container.goTopMode .fabx-actions {
+    display: none;
+  }
+</style>
+
+<div class="fabx-container" id="fab-toolbar">
+  <input type="checkbox" id="fabx-toggle">
+  <div class="fabx-main" id="fab-main">
+    <i class="fas fa-tools"></i>
+  </div>
+
+  <div class="fabx-actions">
+    <div class="fabx-tooltip">
+      <a href="notes.html" class="fabx-btn"><i class="material-icons">menu_book</i></a>
+      <span class="fabx-tiptext">Notes</span>
+    </div>
+
+    <div class="fabx-tooltip">
+      <a href="quiz.html" class="fabx-btn"><i class="material-icons">quiz</i></a>
+      <span class="fabx-tiptext">Quizzes</span>
+    </div>
+
+    <div class="fabx-tooltip">
+      <a href="courses.html" class="fabx-btn"><i class="material-icons">library_books</i></a>
+      <span class="fabx-tiptext">Courses</span>
+    </div>
+
+    <div class="fabx-tooltip">
+      <a href="contact.html" class="fabx-btn"><i class="material-icons">groups</i></a>
+      <span class="fabx-tiptext">Community</span>
+    </div>
+  </div>
+</div>
+
