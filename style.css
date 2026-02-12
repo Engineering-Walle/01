@@ -43,7 +43,6 @@
 
 .loading-text {
   margin-top: 12px;
-  font-family: "Poppins", sans-serif;
   font-size: 18px;
   color: #fff;
   animation: blink 1.4s infinite;
@@ -63,7 +62,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevents side-scrolling when sidebar is tucked away */
+    overflow-x: hidden;
 }
 
 /* --- Header --- */
@@ -78,21 +77,20 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  z-index: 1100; /* Higher than sidebar */
+  z-index: 1100;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .logo { 
   font-size: 25px; 
   font-weight: 600;
-  padding: 3px;
   text-decoration: none;
   color: #fff;
 }
 
-/* --- Navigation (Desktop) --- */
+/* --- Desktop Navigation --- */
 .nav-desktop {
-  display: none; /* Default hidden, shown in media query */
+  display: none;
 }
 
 .nav-desktop ul {
@@ -120,8 +118,8 @@ header {
   height: 25px;
   position: relative;
   cursor: pointer;
-  display: block;
-  z-index: 1200; /* Stays on top of sidebar */
+  display: block;   /* Always visible */
+  z-index: 1200;
 }
 
 .hamburger span {
@@ -141,11 +139,11 @@ header {
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg); top: 11px; }
 
-/* --- Mobile Sidebar --- */
+/* --- Sidebar --- */
 .sidebar {
   position: fixed;
-  top: 0; 
-  right: -300px; /* Width of the sidebar */
+  top: 0;
+  right: -300px;
   width: 280px;
   height: 100vh;
   background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
@@ -154,14 +152,15 @@ header {
   z-index: 1050;
   display: flex;
   flex-direction: column;
-  padding-top: 100px; /* Space for header */
+  padding-top: 100px;
   overflow-y: auto;
   box-shadow: -5px 0 15px rgba(0,0,0,0.2);
 }
 
 .sidebar.open { right: 0; }
 
-.sidebar ul { list-style: none; width: 100%; padding: 0; }
+.sidebar ul { list-style: none; width: 100%; }
+
 .sidebar ul li { 
   opacity: 0; 
   transform: translateX(50px); 
@@ -185,20 +184,16 @@ header {
   padding-left: 40px; 
 }
 
-.sidebar ul li a.active { color: gold; }
-
 .sidebar.open ul li { animation: slideIn 0.5s forwards; }
-.sidebar.open ul li:nth-child(1) { animation-delay: 0.1s; }
-.sidebar.open ul li:nth-child(2) { animation-delay: 0.2s; }
-.sidebar.open ul li:nth-child(3) { animation-delay: 0.3s; }
-.sidebar.open ul li:nth-child(4) { animation-delay: 0.4s; }
-.sidebar.open ul li:nth-child(5) { animation-delay: 0.5s; }
 
-@keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+@keyframes slideIn { 
+  to { opacity: 1; transform: translateX(0); } 
+}
 
 /* --- Overlay --- */
 .overlay {
-  position: fixed; top: 0; left: 0;
+  position: fixed; 
+  top: 0; left: 0;
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.4);
   backdrop-filter: blur(4px);
@@ -208,206 +203,31 @@ header {
   z-index: 1040;
 }
 
-.overlay.active { opacity: 1; pointer-events: all; }
+.overlay.active { 
+  opacity: 1; 
+  pointer-events: all; 
+}
 
-/* --- Main Content --- */
+/* --- Main --- */
 main { padding-top: 80px; }
 
-/* --- Component Styles --- */
-.btn {
-    display: inline-block;
-    background: var(--primary-color);
-    color: #fff;
-    padding: 10px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: none;
-}
+/* --- RESPONSIVE LOGIC --- */
 
-.btn:hover {
-    background: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-}
-
-.page-header {
-    background: linear-gradient(rgba(0, 118, 182, 0.8), rgba(0, 180, 216, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1080') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 4rem 1rem;
-}
-
-.page-header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 50vh;
-    padding: 5px;
-    width: 100%;
-    color: #fff;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1080') no-repeat center center/cover;
-}
-
-.hero-content h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-
-/* --- Banner --- */
-.banner {
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    text-align: center;
-    padding: 0.5rem;
-    font-weight: 600;
-    width:100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.banner-text {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 20s linear infinite;
-}
-
-@keyframes marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* --- Features & Cards --- */
-.features { padding: 4rem 5%; text-align: center; }
-.feature-cards { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
-.feature-cards .card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    width: 100%;
-    max-width: 350px;
-    transition: all 0.3s ease;
-}
-
-.feature-cards .card:hover { transform: translateY(-10px); }
-
-/* --- Courses --- */
-.courses-container {
-    padding: 4rem 5%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.course-card {
-    background: var(--card-bg);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-}
-
-.course-card img { width: 100%; height: 200px; object-fit: cover; }
-.course-content { padding: 1.5rem; flex-grow: 1; }
-
-/* --- Quiz & Notes --- */
-.quiz-container { display: flex; justify-content: center; padding: 4rem 5%; }
-#quiz-box {
-    background: var(--card-bg);
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-}
-
-.answer-btn {
-    background: #f0f0f0;
-    width: 100%;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* --- Footer --- */
-.footer {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #ccc;
-    padding: 40px 30px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-/* --- Study Accordion Blocks --- */
-.study-container { width:100%; max-width:600px; display:flex; margin:auto; flex-direction: column; gap:20px; padding:10px; }
-.study-block { border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); background: #fff; position: relative; }
-.study-block input { position: absolute; opacity: 0; pointer-events: none; }
-.study-header { cursor: pointer; display:flex; align-items:center; justify-content:space-between; padding:18px 20px; font-weight:600; color:#fff; }
-
-/* Content Reveal */
-.study-content {
-  max-height:0;
-  overflow:hidden;
-  padding:0 20px;
-  background:#fafafa;
-  transition:max-height 0.5s ease;
-}
-
-.study-block input:checked ~ .study-content { max-height:700px; padding:15px 20px; }
-
-/* --- Wave Shortcut Buttons --- */
-.shortcut-buttons-wave { padding: 60px 20px; text-align: center; background: #111; color: #fff; }
-.wave-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; }
-.wave-btn {
-  width: 110px; height: 110px; background: #222; border-radius: 15%;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  color: #0ff; text-decoration: none; transition: 0.3s;
-}
-.wave-btn:hover { transform: translateY(-10px); box-shadow: 0 0 20px #0ff; }
-
-/* --- Back to Top --- */
-.back-to-top {
-  position: fixed; bottom: 30px; right: 30px;
-  width: 50px; height: 50px; background:#00d5ff88;
-  color: #fff; border-radius: 20%; display: flex; align-items: center; justify-content: center;
-  text-decoration: none; opacity: 0; pointer-events: none; transition: 0.3s; z-index: 999;
-}
-.back-to-top.show { opacity: 1; pointer-events: auto; }
-
-/* --- RESPONSIVE LOGIC (The Fixed Part) --- */
-
-/* For Desktop (Screens wider than 1024px) */
+/* Desktop */
 @media (min-width: 1025px) {
-  .hamburger, .sidebar, .overlay { display: none !important; }
   .nav-desktop { display: block; }
+  /* Sidebar hidden by default but can open if hamburger clicked */
 }
 
-/* For Tablets and Mobile (Screens 1024px and below) */
+/* Tablet & Mobile */
 @media (max-width: 1024px) {
   .nav-desktop { display: none; }
-  .hamburger { display: block; }
-  
-  /* Make sidebar slightly wider on tablets, full width on small phones */
-  @media (max-width: 480px) {
-    .sidebar { width: 100%; right: -100%; }
-  }
 }
 
-/* Footer & Study Block Tweaks */
-@media (max-width: 768px) {
-  .footer { flex-direction: column; text-align: center; }
-  .footer-left { max-width: 100%; }
-  .study-header { font-size:1rem; padding:14px 16px; }
-  .wave-btn { width: 90px; height: 90px; }
+/* Small phones */
+@media (max-width: 480px) {
+  .sidebar { 
+    width: 100%; 
+    right: -100%; 
+  }
 }
