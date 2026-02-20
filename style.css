@@ -157,7 +157,7 @@ header {
 .overlay.active { opacity: 1; pointer-events: all; }
 
 /* --- Main Content --- */
-main { padding-top: 70px; }
+main { padding-top: 30px; }
 
 /* --- Desktop Styles --- */
 @media (min-width: 1025px) {
