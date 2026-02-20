@@ -161,7 +161,7 @@ main { padding-top: 10px; }
 
 /* --- Desktop Styles --- */
 @media (min-width: 1025px) {
-  .hamburger, .sidebar, .overlay { display: none; }
+  
   .nav-desktop { display: block; }
 }
 
