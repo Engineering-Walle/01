@@ -157,7 +157,7 @@ header {
 .overlay.active { opacity: 1; pointer-events: all; }
 
 /* --- Main Content --- */
-main { padding-top: 30px; }
+main { padding-top: 10px; }
 
 /* --- Desktop Styles --- */
 @media (min-width: 1025px) {
@@ -202,7 +202,7 @@ main { padding-top: 30px; }
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 70vh;
+    height: 40vh;
     padding:5px;
     width:100%;
     color: #fff;
