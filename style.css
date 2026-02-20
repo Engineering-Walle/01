@@ -189,7 +189,7 @@ main { padding-top: 70px; }
     background: linear-gradient(rgba(0, 118, 182, 0.8), rgba(0, 180, 216, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwOTZ8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTcyODE0NDM0OHww&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;
     color: #fff;
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
 }
 
 .page-header h1 {
@@ -202,7 +202,7 @@ main { padding-top: 70px; }
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 50vh;
+    height: 70vh;
     padding:5px;
     width:100%;
     color: #fff;
