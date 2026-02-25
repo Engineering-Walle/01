@@ -209,10 +209,23 @@
 <body>
 
   <!-- === Preloader Section === -->
-  <div id="preloader">
-    <i class="fas fa-tools loader-icon"></i>
-    <div class="loading-text">Loading...</div>
-  </div>
+  
+<!-- ===== PRELOADER START ===== -->
+<div id="preloader">
+    <div class="loader-content">
+        <i class="fas fa-tools loader-icon"></i>
+        <div class="loading-text">Loading</div>
+
+        <div class="progress-wrapper">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <div class="percentage" id="percentage">0%</div>
+    </div>
+</div>
+<!-- ===== PRELOADER END ===== -->
+
+
 <div class="overlay" id="overlay"></div>
 
 <div class="sidebar" id="sidebar">
