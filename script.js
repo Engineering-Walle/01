@@ -12,21 +12,33 @@ window.addEventListener("load", () => {
 
 // ==== Sidebar Hamburger Toggle ====
 
-const menuBtn = document.getElementById("menu-btn");
+
+const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 const overlay = document.getElementById("overlay");
 
 menuBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("open");
-  menuBtn.classList.toggle("active");
-  overlay.classList.toggle("active");
+    menuBtn.classList.toggle("active");
+    sidebar.classList.toggle("active");
+    overlay.classList.toggle("active");
+    document.body.classList.toggle("no-scroll");
 });
 
-overlay.addEventListener("click", () => {
-  sidebar.classList.remove("open");
-  menuBtn.classList.remove("active");
-  overlay.classList.remove("active");
+overlay.addEventListener("click", closeMenu);
+
+document.addEventListener("keydown", (e)=>{
+    if(e.key === "Escape"){
+        closeMenu();
+    }
 });
+
+function closeMenu(){
+    menuBtn.classList.remove("active");
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+}
+
 
 // ==== Contact Form Validation ====
 
