@@ -1,22 +1,25 @@
-// Function jo preloader ko hide karegi
-function removePreloader() {
-    const preloader = document.getElementById("preloader");
-    if (preloader && !preloader.classList.contains("hide")) {
-        preloader.classList.add("hide");
-        
-        // DOM se poori tarah hatane ke liye (0.6s CSS transition ke baad)
-        setTimeout(() => {
-            preloader.style.display = "none";
-        }, 600);
+
+const progressBar = document.getElementById("progress-bar");
+const percentage = document.getElementById("percentage");
+const preloader = document.getElementById("preloader");
+
+let progress = 0;
+
+const interval = setInterval(() => {
+    progress += Math.random() * 10;
+    if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
     }
-}
+    progressBar.style.width = progress + "%";
+    percentage.textContent = Math.floor(progress) + "%";
+}, 200);
 
-// 1. Jaise hi page load ho, preloader hatao
-window.addEventListener("load", removePreloader);
-
-// 2. Fail-safe: Agar window.load trigger nahi hota (slow network), 
-// toh 5 second baad preloader apne aap hat jayega.
-setTimeout(removePreloader, 5000);
+window.addEventListener("load", function () {
+    setTimeout(() => {
+        preloader.classList.add("hide");
+    }, 700);
+});
 
 // ==== Sidebar Hamburger Toggle ====
 const menuBtn = document.getElementById("menuBtn");
