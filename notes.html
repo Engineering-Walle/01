@@ -3,201 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Page Title -->
   <title>Notes | Engineering Walle</title>
-<meta name="description" content="Get free diploma notes semester-wise for all branches on Engineering Walle.">
-
-  <!-- Keywords (optional for SEO) -->
+  <meta name="description" content="Get free diploma notes semester-wise for all branches on Engineering Walle.">
   <meta name="keywords" content="Diploma Notes, Polytechnic Notes, Engineering Walle, Study Material PDF, Semester Notes, Jharkhand Polytechnic, Diploma Handwritten Notes, Syllabus PDF" />
-
-  <!-- Author -->
   <meta name="author" content="Engineering Walle Team" />
 
-  <!-- Favicon -->
   <link rel="icon" href="logo.png" type="image/png" />
-
-   <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
-  <!-- === Preloader Section === -->
   <div id="preloader">
     <i class="fas fa-tools loader-icon"></i>
     <div class="loading-text">Loading...</div>
   </div>
 
+  <header>
+    <a href="index.html" class="logo" style="color:white;">
+      <i class="fas fa-tools" style="color:#ff9d00;"></i> Engineering Walle 
+    </a>
+    
+    <nav>
+      <a href="courses.html"><i class="fas fa-book-open"></i> <span>Courses</span></a>
+      <a href="notes.html" class="active"><i class="fas fa-sticky-note"></i> <span>Notes</span></a>
+      <a href="about-us.html"><i class="fa-solid fa-user"></i> <span>About</span></a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> <span>Contact</span></a>
+    </nav>
 
- <header>
-  <a href="index.html" class="logo" style="color:white;">
-<i class="fas fa-tools" style="color:#ff9d00;"></i> Engineering Walle </a>
+    <div class="hamburger" id="menuBtn"><span></span><span></span><span></span></div>
+  </header>
 
-  <!-- Hamburger for Mobile -->
-  <div class="hamburger" id="menu-btn"><span></span><span></span><span></span></div>
-</header>
+  <div class="overlay" id="overlay"></div>
 
-<!-- Overlay -->
-<div class="overlay" id="overlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" style="--i:1"><i class="fas fa-home"></i> Home</a>
+    <a href="courses.html" style="--i:2"><i class="fas fa-book-open"></i> Courses</a>
+    <a href="quiz.html" style="--i:3"><i class="fas fa-question-circle"></i> Quiz</a>
+    <a href="notes.html" style="--i:4" class="active"><i class="fas fa-sticky-note"></i> Notes</a>
+    <a href="about-us.html" style="--i:5"><i class="fa-solid fa-user"></i> About</a>
+    <a href="contact.html" style="--i:6"><i class="fas fa-envelope"></i> Contact</a>
+  </aside>
 
-<!-- Mobile Sidebar -->
-<aside class="sidebar" id="sidebar">
-  <ul>
-    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-               <li><a href="courses.html"><i class="fas fa-book-open"></i> Courses</a></li>
-               <li><a href="quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-               <li><a href="notes.html" class="active"><i class="fas fa-sticky-note"></i> Notes</a></li>
-               <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-  </ul>
-</aside>
+  <main>
+    <section class="page-header">
+      <h1>Notes & Resources</h1>
+      <p>Download helpful notes, cheat sheets, and more.</p>
+    </section>
 
-    <main>
-        <section class="page-header">
-            <h1>Notes & Resources</h1>
-            <p>Download helpful notes, cheat sheets, and more.</p>
-        </section>
+    <section class="notes-container">       
+      <h2>Diploma and Btech Assets (JUT)</h2>                  
+      <div class="study-container">
 
-<!-- notes for diploma and btech -->
-     <section class="notes-container">       
-       <h2>Diploma and Btech Assets ( JUT )</h2>                  
-<div class="study-container">
+        <div class="study-block">
+          <input type="checkbox" id="notes">
+          <label class="study-header" for="notes">
+            <span><span class="material-icons">menu_book</span> Notes</span>
+            <span class="material-icons">expand_more</span>
+          </label>
+          <div class="study-content">
+            <p>Download subject-wise PDF Notes with clear explanations.</p>
+            <div class="btn-group">
+              <a href="diplomanotes.html" class="btn2">Diploma</a>
+              <a href="#" class="btn2">B-tech</a>
+            </div>
+          </div>
+        </div>
 
-  <!-- Notes -->
-  <div class="study-block">
-    <input type="checkbox" id="notes">
-    <label class="study-header" for="notes">
-      <span><span class="material-icons">menu_book</span> Notes</span>
-      <span class="material-icons">expand_more</span>
-    </label>
-    <div class="study-content">
-     <p>Download subject-wise PDF Notes with clear explanations and easy formatting.</p>
-     <button class="btn2" ><a href="diplomanotes.html" style="text-decoration: none; color:white;">Diploma</a></button>
-          <button class="btn2">B-tech</button>
+        <div class="study-block">
+          <input type="checkbox" id="syllabus">
+          <label class="study-header" for="syllabus">
+            <span><span class="material-icons">assignment</span> Syllabus</span>
+            <span class="material-icons">expand_more</span>
+          </label>
+          <div class="study-content">
+            <p>Updated semester-wise syllabus for JUT.</p>
+            <a href="https://drive.google.com/file/d/1ofa7A53bldV9yI5T0LSazTxbrYrKdT_V/view" class="btn2">📑 CSE/IT (1st Sem)</a>
+            <a href="https://drive.google.com/drive/folders/1A22TphddQFpyiz-TvktSTtHIvdshd7u5" class="btn2">📑 CSE/IT (3rd Sem)</a>
+            <a href="#" class="btn2">Diploma 2nd/4th/5th/6th Sem</a>
+          </div>
+        </div>
+
+        <div class="study-block">
+          <input type="checkbox" id="pyqs">
+          <label class="study-header" for="pyqs">
+            <span><span class="material-icons">description</span> PYQs</span>
+            <span class="material-icons">expand_more</span>
+          </label>
+          <div class="study-content">
+            <p>Previous year question papers with solutions.</p>
+            <a href="#" class="btn2">Diploma Sem 1 (2024)</a>
+            <a href="#" class="btn2">B-tech Sem 1 (2024)</a>
+            <a href="#" class="btn2">Diploma Sem 2 (2024)</a>
+          </div>
+        </div>
+
+      </div>
+
+      <h2>Web Development</h2>
+      <ul class="resource-list">
+        <li>
+          <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTc9VSVXdnGHgVewGX_m_k00bWRMiPLt4kPj0xTImvRtAZGn0F-m7ukWUE-kJwKap4aqU&usqp=CAU" target="_blank">
+            <i class="fas fa-file-image"></i> HTML5 Elements Cheat Sheet
+            <span>Download</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://i.pinimg.com/1200x/5f/34/32/5f3432db4937954c542dd834a8e07c37.jpg" target="_blank">
+            <i class="fas fa-file-image"></i> CSS3 Cheat Sheet
+            <span>Download</span>
+          </a>
+        </li>
+      </ul>
+
+      <h2>Data Science</h2>
+      <ul class="resource-list">
+        <li>
+          <a href="https://docs.google.com/document/d/1jXRYZWRAkeVS6JXtq4M1ZIZKoVF9oBdBPcecekw7u90/edit?usp=drivesdk" target="_blank">
+            <i class="fas fa-file-pdf"></i> Python Handwritten Notes 🐍
+            <span>Download</span>
+          </a>
+        </li>
+      </ul>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left"> 
+      <div class="footer-links">
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy-security.html">Privacy & Security</a>
+        <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
+        <a href="about-us.html">About Us</a>    
+      </div>
+      <hr>
+      <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
+      <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
     </div>
-  </div>
 
-  <!-- Syllabus -->
-  <div class="study-block">
-    <input type="checkbox" id="syllabus">
-    <label class="study-header" for="syllabus">
-      <span><span class="material-icons">assignment</span> Syllabus</span>
-      <span class="material-icons">expand_more</span>
-    </label>
-    <div class="study-content">
-     <p> Complete updated semester-wise syllabus for all subjects in organized format.</p>
-      <button class="btn2" ><a href="https://drive.google.com/file/d/1ofa7A53bldV9yI5T0LSazTxbrYrKdT_V/view?usp=drivesdk" style="text-decoration: none; color:white;">📑 CSE/CS/CE/IT (1st Sem) </a></button>
-       <button class="btn2">Diploma 2nd sem</button>
-        <button class="btn2" ><a href="https://drive.google.com/drive/folders/1A22TphddQFpyiz-TvktSTtHIvdshd7u5" style="text-decoration: none; color:white;">📑 CSE/CS/CE/IT (3rd Sem) </a></button>
-         <button class="btn2">Diploma 4th sem</button>
-          <button class="btn2">Diploma 5th sem</button>
-           <button class="btn2">Diploma 6th sem</button>
-          
+    <div class="footer-right">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
     </div>
-  </div>
+  </footer>
 
-  <!-- PYQs -->
-  <div class="study-block">
-    <input type="checkbox" id="pyqs">
-    <label class="study-header" for="pyqs">
-      <span><span class="material-icons">description</span> PYQs</span>
-      <span class="material-icons">expand_more</span>
-    </label>
-    <div class="study-content">
-      <p>Previous year question papers with solutions for practice and preparation.</p>
-      <button class="btn2">Diploma sem1 (2024)</button>
-          <button class="btn2">B-tech sem1 (2024)</button>
-          <button class="btn2">Diploma sem1 (2025)</button>
-          <button class="btn2">B-tech sem1 (2024)</button>
-          <button class="btn2">Diploma sem2 (2024)</button>
-          <button class="btn2">B-tech sem2 (2024)</button>
-          
-          
-    </div>
-  </div>
-
-  <!-- Important Questions -->
-  <div class="study-block">
-    <input type="checkbox" id="imp">
-    <label class="study-header" for="imp">
-      <span><span class="material-icons">star</span> Important Questions</span>
-      <span class="material-icons">expand_more</span>
-    </label>
-    <div class="study-content">
-      <p>Handpicked important questions for exams to maximize your score efficiently.</p>
-      <button class="btn2">Diploma 1st sem</button>
-       <button class="btn2">Diploma 2nd sem</button>
-        <button class="btn2">Diploma 3rd sem</button>
-         <button class="btn2">Diploma 4th sem</button>
-          <button class="btn2">Diploma 5th sem</button>
-           <button class="btn2">Diploma 6th sem</button>
-    </div>
-  </div>
-
-</div>
-
-            <h2>Web Development</h2>
-            <ul class="resource-list">
-                <li><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTc9VSVXdnGHgVewGX_m_k00bWRMiPLt4kPj0xTImvRtAZGn0F-m7ukWUE-kJwKap4aqU&usqp=CAU" download>
-                    <i class="fas fa-file-image"></i> HTML5 Elements Cheat Sheet
-                    <span>Download</span>
-                </a></li>
-                <li><a href="https://i.pinimg.com/1200x/5f/34/32/5f3432db4937954c542dd834a8e07c37.jpg" download>
-                    <i class="fas fa-file-image"></i> CSS3 Cheat Sheet
-                    <span>Download</span>
-                </a></li>
-                 <li><a href="https://pbs.twimg.com/media/Fh-zkCpUAAEU3VE?format=jpg&name=4096x4096" download>
-                    <i class="fas fa-file-image"></i> JavaScript cheat sheet
-                    <span>Download</span>
-                </a></li>
-            </ul>
-
-            <h2>Data Science</h2>
-            <ul class="resource-list">
-                <li><a href="https://docs.google.com/document/d/1jXRYZWRAkeVS6JXtq4M1ZIZKoVF9oBdBPcecekw7u90/edit?usp=drivesdk" download>
-                    <i class="fas fa-file-pdf"></i> Python Handtyped notes 🐍<span>Download</span>
-                </a></li>
-                 <li><a href="https://drive.google.com/file/d/1cqid6uY8Hj6E9_3ykgW__-sW2eBiYd8R/view?usp=drivesdk" download>
-                    <i class="fas fa-file-code"></i> Python tips and tricks 🐍
-                    <span>Download</span>
-                </a></li>
-            </ul>
-
-             <h2>Keyboard Shortcuts ⌨️</h2>
-             <ul class="resource-list">
-                <li><a href="https://drive.google.com/file/d/1IEkjzlD7acY_D303sQeAQiFN2VkNWkFz/view?usp=drivesdk" download>
-                    <i class="fas fa-file-lines"></i> Important Keyboard Shortcuts PDF<span>Download</span>
-                </a></li>
-                 
-            </ul>
-
-        </section>
-    </main>
-
-     <footer class="footer">
-  <div class="footer-left"> 
-    <div class="footer-links">
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="privacy-security.html">Privacy & Security</a>
-      <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
-      <a href="about-us.html">About Us</a>    
-    </div>
-<hr>
-    <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
-    <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
-  </div>
-
-  <div class="footer-right">
-    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
-    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-</footer>
- <script src="toolbar.js"></script>
-    <script src="script.js"></script>
+  <script src="toolbar.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
