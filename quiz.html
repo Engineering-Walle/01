@@ -3,96 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Page Title -->
-  <title>Diploma Quiz | Engineering Walle</title>
+    <title>Diploma Quiz | Engineering Walle</title>
 
-  <!-- Meta Description -->
-  <meta name="description" content="Attempt free diploma online quizzes for all semesters and subjects. Test your knowledge with Engineering Walle's semester-wise quiz system for polytechnic students." />
+    <meta name="description" content="Attempt free diploma online quizzes for all semesters and subjects. Test your knowledge with Engineering Walle's semester-wise quiz system." />
+    <meta name="keywords" content="Diploma Quiz, Polytechnic Quiz, Engineering Walle Quiz, Online Test, Diploma MCQ" />
+    <meta name="author" content="Engineering Walle Team" />
 
-  <!-- Keywords (optional but helpful) -->
-  <meta name="keywords" content="Diploma Quiz, Polytechnic Quiz, Engineering Walle Quiz, Semester Quiz, Subject Wise Quiz, Online Test, Polytechnic Practice, Diploma MCQ, Jharkhand Polytechnic" />
-
-  <!-- Author -->
-  <meta name="author" content="Engineering Walle Team" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png" type="image/png" />
-
+    <link rel="icon" href="logo.png" type="image/png" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
-  <!-- === Preloader Section === -->
   <div id="preloader">
     <i class="fas fa-tools loader-icon"></i>
     <div class="loading-text">Loading...</div>
   </div>
 
+  <header>
+    <a href="index.html" class="logo" style="color:white;">
+      <i class="fas fa-tools" style="color:#ff9d00;"></i> Engineering Walle 
+    </a>
+    
+    <nav>
+      <a href="courses.html"><i class="fas fa-book-open"></i> <span>Courses</span></a>
+      <a href="notes.html"><i class="fas fa-sticky-note"></i> <span>Notes</span></a>
+      <a href="quiz.html" class="active"><i class="fas fa-question-circle"></i> <span>Quiz</span></a>
+      <a href="about-us.html"><i class="fa-solid fa-user"></i> <span>About</span></a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> <span>Contact</span></a>
+    </nav>
 
-   <header>
-  <a href="index.html" class="logo" style="color:white;">
-<i class="fas fa-tools" style="color:#ff9d00;"></i> Engineering Walle </a>
-  <!-- Hamburger for Mobile -->
-  <div class="hamburger" id="menu-btn"><span></span><span></span><span></span></div>
-</header>
+    <div class="hamburger" id="menuBtn"><span></span><span></span><span></span></div>
+  </header>
 
-<!-- Overlay -->
-<div class="overlay" id="overlay"></div>
+  <div class="overlay" id="overlay"></div>
 
-<!-- Mobile Sidebar -->
-<aside class="sidebar" id="sidebar">
-  <ul>
-    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-               <li><a href="courses.html"><i class="fas fa-book-open"></i> Courses</a></li>
-               <li><a href="quiz.html" class="active"><i class="fas fa-question-circle"></i> Quiz</a></li>
-               <li><a href="notes.html"><i class="fas fa-sticky-note"></i> Notes</a></li>
-               <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-  </ul>
-</aside>
-    <main>
-        <section class="page-header">
-            <h1>Test Your Knowledge</h1>
-            <p>Take this quick quiz on web development fundamentals.</p>
-        </section>
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" style="--i:1"><i class="fas fa-home"></i> Home</a>
+    <a href="courses.html" style="--i:2"><i class="fas fa-book-open"></i> Courses</a>
+    <a href="quiz.html" style="--i:3" class="active"><i class="fas fa-question-circle"></i> Quiz</a>
+    <a href="notes.html" style="--i:4"><i class="fas fa-sticky-note"></i> Notes</a>
+    <a href="about-us.html" style="--i:5"><i class="fa-solid fa-user"></i> About</a>
+    <a href="contact.html" style="--i:6"><i class="fas fa-envelope"></i> Contact</a>
+  </aside>
 
-        <div class="quiz-container">
-            <div id="quiz-box">
-                <h2 id="question">Question text</h2>
-                <div id="answer-buttons">
-                    <button class="answer-btn">Answer 1</button>
-                    <button class="answer-btn">Answer 2</button>
-                    <button class="answer-btn">Answer 3</button>
-                    <button class="answer-btn">Answer 4</button>
-                </div>
-                <button id="next-btn" class="btn">Next</button>
+  <main>
+    <section class="page-header">
+        <h1>Test Your Knowledge</h1>
+        <p>Attempt subject-wise MCQs and improve your exam preparation.</p>
+    </section>
+
+    <div class="quiz-container">
+        <div id="quiz-box">
+            <div class="quiz-header">
+                <span id="question-number">Question 1 of 10</span>
+            </div>
+            <h2 id="question">Loading Question...</h2>
+            <div id="answer-buttons">
+                <button class="answer-btn">Option 1</button>
+                <button class="answer-btn">Option 2</button>
+                <button class="answer-btn">Option 3</button>
+                <button class="answer-btn">Option 4</button>
+            </div>
+            <div class="quiz-footer">
+                <button id="next-btn" class="btn" style="display: none;">Next Question</button>
             </div>
         </div>
-    </main>
-    
-     <footer class="footer">
-  <div class="footer-left"> 
-    <div class="footer-links">
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="privacy-security.html">Privacy & Security</a>
-      <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
-      <a href="about-us.html">About Us</a>    
     </div>
-<hr>
-    <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
-    <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
-  </div>
+  </main>
 
-  <div class="footer-right">
-    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
-    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-</footer>
- <script src="toolbar.js"></script>
-    <script src="script.js"></script>
-    <script src="quiz.js"></script>
+  <footer class="footer">
+    <div class="footer-left"> 
+      <div class="footer-links">
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy-security.html">Privacy & Security</a>
+        <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
+        <a href="about-us.html">About Us</a>    
+      </div>
+      <hr>
+      <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
+      <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
+    </div>
+
+    <div class="footer-right">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+    </div>
+  </footer>
+
+  <script src="toolbar.js"></script>
+  <script src="script.js"></script>
+  <script src="quiz.js"></script>
 </body>
 </html>
