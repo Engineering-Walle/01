@@ -10,160 +10,296 @@
     --card-bg: #ffffff;
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
+    overflow-x:hidden;
+}
+
+/* Prevent scroll when menu open */
+body.no-scroll{
+    overflow:hidden;
 }
 
 /* --- Header & Navigation --- */
 
-/* --- Header --- */
-header {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 80px;
-  background:linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  z-index: 1001;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+/* ================= HEADER ================= */
+
+header{
+    width:100%;
+    padding:20px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    position:relative;
+    z-index:1100;
+    
 }
 
-/* --- Logo --- */
-.logo { font-size: 25px; 
-        font-weight: 600;
-        padding:3px;
-        text-decoration: none;
- }
-
-/* --- Desktop Horizontal Navbar --- */
-
-.nav-desktop {
-  display: none;
+.logo{
+    display:flex;
+    align-items:center;
+    font-weight:700;
+    font-size:25px;
+    color:white;
+    text-decoration:none;
+    gap:8px;
 }
 
-.nav-desktop ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
+.logo span{
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#5f6fff,#3c4fff);
 }
 
-.nav-desktop ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 8px 12px;
-  transition: background 0.3s, border-radius 0.3s;
+nav {
+    display: flex;
+    gap: 40px;
 }
 
-.nav-desktop ul li a:hover {
-  background: rgba(255,255,255,0.2);
-  border-radius: 5px;
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+
+    width: 40px;              /* icon-only width */
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
-/* --- Hamburger --- */
-.hamburger {
-  width: 30px;
-  height: 25px;
-  position: relative;
-  cursor: pointer;
-  display: block;
+nav a span {
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
-.hamburger span {
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: #fff;
-  left: 0;
-  transition: all 0.4s ease;
+nav a:hover {
+    width: 100px;             /* expanded width */
+    color: #fff;
 }
 
-.hamburger span:nth-child(1) { top: 0; }
-.hamburger span:nth-child(2) { top: 11px; }
-.hamburger span:nth-child(3) { top: 22px; }
-
-.hamburger.active span:nth-child(1) { transform: rotate(45deg); top: 11px; }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg); top: 11px; }
-
-/* --- Mobile Sidebar --- */
-.sidebar {
-  position: fixed;
-  top: 60px; 
-  right: -500px; 
-  width: 230px;
-  height: calc(100% - 60px);
-  background:linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-  color: #fff;
-  transition: right 0.5s ease;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
-  overflow-y: auto;
-}
-.sidebar .active {
-    color:gold;
-}
-.sidebar.open { right: 0; }
-
-.sidebar ul { list-style: none; width: 100%; padding: 0; }
-.sidebar ul li { opacity: 0; transform: translateX(50px); margin: 20px 0; width: 100%; }
-.sidebar ul li a { 
-      color: #ededed; 
-      text-decoration: none; 
-      font-size: 20px;
-      padding: 5px 20px; 
-      display: block; 
-      font-weight:bold;
-      transition: background 0.3s, transform 0.3s; }
-.sidebar ul li a:hover { background: rgba(255,255,255,0.2); border-radius: 5px; transform: translateX(10px); }
-
-.sidebar.open ul li { animation: slideIn 0.5s forwards; }
-.sidebar.open ul li:nth-child(1) { animation-delay: 0.1s; }
-.sidebar.open ul li:nth-child(2) { animation-delay: 0.2s; }
-.sidebar.open ul li:nth-child(3) { animation-delay: 0.3s; }
-.sidebar.open ul li:nth-child(4) { animation-delay: 0.4s; }
-.sidebar.open ul li:nth-child(5) { animation-delay: 0.5s; }
-
-@keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
-
-/* --- Overlay --- */
-.overlay {
-  position: fixed; top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(4px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-  z-index: 999;
+nav a:hover span {
+    opacity: 1;
 }
 
-.overlay.active { opacity: 1; pointer-events: all; }
+/* ================= BUTTONS ================= */
 
-/* --- Main Content --- */
-main { padding-top: 10px; }
-
-/* --- Desktop Styles --- */
-@media (min-width: 1025px) {
-  
-  .nav-desktop { display: block; }
+.btn-primary{
+    padding:10px 22px;
+    border-radius:8px;
+    border:none;
+    background:#5f6fff;
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .3s ease, transform .15s ease;
 }
+
+.btn-primary:hover{
+    background:#3c4fff;
+}
+
+.btn-primary:active{
+    transform:scale(0.97);
+}
+
+.btn-outline{
+    padding:10px 22px;
+    border-radius:8px;
+    solid #5f6fff;
+    background:transparent;
+    color:#5f6fff;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* ================= HAMBURGER ================= */
+
+.hamburger{
+    display:none;
+    width:30px;
+    height:22px;
+    position:relative;
+    cursor:pointer;
+    z-index:1101;
+}
+
+.hamburger span{
+    position:absolute;
+    width:100%;
+    height:3px;
+    background:white;
+    left:0;
+    transition:transform .4s ease, opacity .3s ease;
+}
+
+.hamburger span:nth-child(1){ top:0; }
+.hamburger span:nth-child(2){ top:9px; }
+.hamburger span:nth-child(3){ bottom:0; }
+
+.hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translateY(9px);
+}
+
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translateY(-9px);
+}
+
+/* ================= SIDEBAR ================= */
+
+/* Sidebar Container */
+.sidebar{
+    position:fixed;
+    top:0;
+    right:0;
+    width:280px;
+    height:100%;
+    background:linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    padding:100px 30px;
+    box-shadow:-4px 0 20px rgba(0,0,0,0.3);
+    transform:translateX(100%);
+    transition:transform .4s ease;
+    z-index:1100;
+}
+
+/* When Active */
+.sidebar.active{
+    transform:translateX(0);
+}
+
+/* Sidebar Links */
+.sidebar a{
+    display:block;
+    padding:12px 14px;
+    margin-bottom:18px;
+    text-decoration:none;
+    color:white;
+    font-weight:700;
+    font-size:1.3rem;
+    border-left:3px solid transparent;
+    
+    opacity:0;
+    transform:translateX(30px);
+    transition:all .4s ease;
+}
+
+/* Stagger Animation */
+.sidebar.active a{
+    opacity:1;
+    transform:translateX(0);
+    transition-delay:calc(var(--i) * 0.1s);
+}
+
+/* Hover Effect */
+.sidebar a:hover{
+    background:rgba(255,255,255,0.08);
+    border-left:3px solid #5fd0ff;
+    padding-left:30px;
+    box-shadow:inset 0 0 10px rgba(0,255,255,0.2);
+}
+/* ================= OVERLAY ================= */
+
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .3s ease;
+    z-index:1100;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    padding:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.hero-left{
+    max-width:600px;
+}
+
+.hero-left h1{
+    font-size:56px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.hero-left p{
+    color:#666;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.hero-right img{
+    width:420px;
+    border-radius:12px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+    header{
+        padding:20px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hamburger{
+        display:block;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:40px 20px;
+    }
+
+    .hero-left h1{
+        font-size:36px;
+    }
+
+    .hero-right img{
+        width:300px;
+        margin-top:30px;
+    }
+}
+
+
 
 /* --- Reusable Components --- */
 .btn {
