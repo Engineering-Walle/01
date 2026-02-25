@@ -1,5 +1,4 @@
- // ==== main.js ====
-
+// ==== Preloader ====
 window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   if (preloader) {
@@ -11,8 +10,6 @@ window.addEventListener("load", () => {
 });
 
 // ==== Sidebar Hamburger Toggle ====
-
-
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 const overlay = document.getElementById("overlay");
@@ -39,9 +36,7 @@ function closeMenu(){
     document.body.classList.remove("no-scroll");
 }
 
-
 // ==== Contact Form Validation ====
-
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
@@ -69,14 +64,12 @@ if (contactForm) {
 }
 
 // ==== Email Validation Function ====
-
 function validateEmail(email) {
   const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   return re.test(email.toLowerCase());
 }
 
 // ==== Back to Top Button ====
-
 const backToTop = document.getElementById("backToTop");
 
 if (backToTop) {
@@ -100,8 +93,4 @@ if (backToTop) {
 }
 
 // ==== chatbase bot ====
-
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="PqFanbRcUsOq5CQLImFkx";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-
-
-
