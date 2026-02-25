@@ -3,139 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Disclaimer/Engg.Walle</title>
- <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Disclaimer | Engineering Walle</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
+/* Scoped to .containery to prevent header/footer styling conflicts */
 .containery {
   max-width: 900px;
   margin: 30px auto;
-  background:none;
+  background: none;
   padding: 60px 30px;
   border-radius: 10px;
 }
-h1 {
+.containery h1 {
   text-align: left;
   color: #0288d1;
   margin-bottom: 20px;
 }
-h2 { 
-     margin-top: 30px; 
-     color: #003366;
-     border-left:5px solid #ffbd15b5;
-     background:#eaffeab5;
-     padding-left:10px;
-     margin-bottom:10px;
-     
-      }
-p { line-height: 1.7; margin-bottom: 15px; }
-
+.containery h2 { 
+  margin-top: 30px; 
+  color: #003366;
+  border-left: 5px solid #ffbd15b5;
+  background: #eaffeab5;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.containery p { 
+  line-height: 1.7; 
+  margin-bottom: 15px; 
+}
+.containery a {
+  color: #0288d1;
+  text-decoration: none;
+}
+.containery a:hover {
+  text-decoration: underline;
+}
 </style>
 </head>
 <body>
 
-  <!-- === Preloader Section === -->
   <div id="preloader">
     <i class="fas fa-tools loader-icon"></i>
     <div class="loading-text">Loading...</div>
   </div>
 
-
- <header>
-    <!-- === Preloader Section === -->
-  <div id="preloader">
-    <i class="fas fa-tools loader-icon"></i>
-    <div class="loading-text">Loading...</div>
-  </div>
 <div class="overlay" id="overlay"></div>
 
 <div class="sidebar" id="sidebar">
-
     <a href="index.html" style="--i:1"><i class="fas fa-home"></i> Home</a>
     <a href="courses.html" style="--i:2"><i class="fas fa-book-open"></i> Courses</a>
     <a href="quiz.html" style="--i:3"><i class="fas fa-question-circle"></i> Quiz</a>
     <a href="notes.html" style="--i:4"><i class="fas fa-sticky-note"></i> Notes</a>
-    <a href="contact.html" style="--i:5"><i class="fas fa-envelope"></i> Contact</a>
-
+    <a href="about-us.html" style="--i:5"><i class="fa-solid fa-user"></i> About</a>
+    <a href="contact.html" style="--i:6"><i class="fas fa-envelope"></i> Contact</a>
 </div>
+
 <header>
-     <a href="index.html" class="logo" style="color:white;">
+  <a href="index.html" class="logo" style="color:white;">
     <i class="fas fa-tools" style="color:#ff9d00;"></i> Engineering Walle
   </a>
 
-    <nav>
+  <nav>
+    <a href="courses.html">
+      <i class="fas fa-book-open"></i>
+      <span>Courses</span>
+    </a>
+    <a href="notes.html">
+      <i class="fas fa-sticky-note"></i>
+      <span>Notes</span>
+    </a>
+    <a href="about-us.html">
+      <i class="fa-solid fa-user"></i>
+      <span>About</span>
+    </a>
+    <a href="contact.html">
+      <i class="fa-solid fa-envelope"></i>
+      <span>Contact</span>
+    </a>
+  </nav>
 
-  <a href="courses.html">
-    <i class="fas fa-book-open"></i>
-    <span>Courses</span>
-  </a>
-
-  <a href="notes.html">
-    <i class="fas fa-sticky-note"></i>
-    <span>Notes</span>
-  </a>
-  <a href="about.html">
-    <i class="fa-solid fa-user"></i>
-    <span>About</span>
-  </a>
-
-  <a href="contact.html">
-    <i class="fa-solid fa-envelope"></i>
-    <span>Contact</span>
-  </a>
-</nav>
-
-    <div class="hamburger" id="menuBtn">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+  <div class="hamburger" id="menuBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+  </div>
 </header>
-<div class="containery">
+
+<main class="containery">
   <h1>Disclaimer</h1>
 
   <h2>General Information</h2>
-  <p>The information provided by <strong>Etech</strong> on this website is for general informational purposes only. We make no guarantees regarding the accuracy or reliability of any information.</p>
+  <p>The information provided by <strong>Engineering Walle</strong> on this website is for general informational purposes only. While we strive to keep resources up to date, we make no guarantees regarding the absolute accuracy or reliability of any information provided.</p>
 
   <h2>Educational Advice Disclaimer</h2>
-  <p>All content on this site is for educational purposes only and should not be considered professional advice. Use of the content is at your own risk.</p>
+  <p>All content on this site—including notes, quiz questions, and course links—is for educational purposes only. It should not be considered professional career advice. Use of the content provided is at your own risk.</p>
 
   <h2>External Links Disclaimer</h2>
-  <p>This site may contain links to third-party websites. We do not guarantee the accuracy or reliability of these sites.</p>
+  <p>This site contains links to third-party websites (such as Google Drive, WhatsApp, and external course providers). We do not control or guarantee the accuracy, relevance, or safety of these external sites.</p>
 
-  <h2>Affiliate Disclaimer</h2>
-  <p>Etech may earn commissions from affiliate links provided on this site at no additional cost to you.</p>
+  <h2>Affiliate & Third-Party Disclaimer</h2>
+  <p>Engineering Walle may share links to external platforms or certification programs. We are not responsible for the transactions or privacy policies of those third-party entities.</p>
 
   <h2>Consent</h2>
-  <p>By using this website, you consent to this disclaimer.</p>
+  <p>By using our website, you hereby consent to our disclaimer and agree to its terms.</p>
 
   <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:smart420786@gmail.com.com">info@etech.com</a></p>
-</div>
+  <p>If you require any more information or have any questions about our site's disclaimer, please feel free to contact us by email at: <a href="mailto:smart420786@gmail.com">smart420786@gmail.com</a></p>
+</main>
 
- <footer class="footer">
+<footer class="footer">
   <div class="footer-left"> 
     <div class="footer-links">
-      <a href="disclaimer.html">Disclaimer</a>
+      <a href="disclaimer.html" class="active">Disclaimer</a>
       <a href="privacy-security.html">Privacy & Security</a>
       <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
       <a href="about-us.html">About Us</a>    
     </div>
-<hr>
+    <hr>
     <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
     <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
   </div>
 
   <div class="footer-right">
-    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
-    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
   </div>
 </footer>
- <script src="toolbar.js"></script>
-    <script src="script.js"></script>
+
+<script src="toolbar.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
