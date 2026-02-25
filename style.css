@@ -968,7 +968,7 @@ nav a:hover span {
 
 .loading-text {
     margin-top: 15px;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     color: #e2e8f0;
     letter-spacing: 2px;
 }
@@ -991,8 +991,8 @@ nav a:hover span {
 }
 
 .percentage {
-    color: #94a3b8;
-    font-size: 0.9rem;
+    color: #ff9d00;
+    font-size: 0.5rem;
 }
 
 /* Animations */
