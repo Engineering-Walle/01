@@ -1,172 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Page Title -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diploma Courses | Engineering Walle</title>
 
-  <!-- Meta Description -->
   <meta name="description" content="Explore all diploma courses and polytechnic branches with complete subjects, syllabus, and study guides. Get detailed information about Computer, Mechanical, Electrical, and Civil courses at Engineering Walle." />
-
-  <!-- Keywords -->
   <meta name="keywords" content="Diploma Courses, Polytechnic Courses, Engineering Walle, Diploma Branches, Polytechnic Subjects, Diploma Syllabus, Computer Science, Mechanical, Electrical, Civil" />
-
-  <!-- Author -->
   <meta name="author" content="Engineering Walle Team" />
 
-  <!-- Favicon -->
   <link rel="icon" href="logo.png" type="image/png" />
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
-  <!-- === Preloader Section === -->
   <div id="preloader">
     <i class="fas fa-tools loader-icon"></i>
     <div class="loading-text">Loading...</div>
   </div>
 
+  <div class="overlay" id="overlay"></div>
 
-<header>
-    <!-- === Preloader Section === -->
-  <div id="preloader">
-    <i class="fas fa-tools loader-icon"></i>
-    <div class="loading-text">Loading...</div>
-  </div>
-<div class="overlay" id="overlay"></div>
-
-<div class="sidebar" id="sidebar">
-
+  <div class="sidebar" id="sidebar">
     <a href="index.html" style="--i:1"><i class="fas fa-home"></i> Home</a>
+    <a href="courses.html" style="--i:2"><i class="fas fa-book-open"></i> Courses</a>
     <a href="quiz.html" style="--i:3"><i class="fas fa-question-circle"></i> Quiz</a>
     <a href="notes.html" style="--i:4"><i class="fas fa-sticky-note"></i> Notes</a>
-    <a href="contact.html" style="--i:5"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="about-us.html" style="--i:5"><i class="fa-solid fa-user"></i> About</a>
+    <a href="contact.html" style="--i:6"><i class="fas fa-envelope"></i> Contact</a>
+  </div>
 
-</div>
-<header>
-     <a href="index.html" class="logo" style="color:white;">
-    <i class="fas fa-tools" style="color:#ff9d00;"></i> Engineering Walle
-  </a>
+  <header>
+    <a href="index.html" class="logo" style="color:white;">
+      <i class="fas fa-tools" style="color:#ff9d00;"></i> Engineering Walle
+    </a>
 
     <nav>
-
-  <a href="notes.html">
-    <i class="fas fa-sticky-note"></i>
-    <span>Notes</span>
-  </a>
-  <a href="about.html">
-    <i class="fa-solid fa-user"></i>
-    <span>About</span>
-  </a>
-
-  <a href="contact.html">
-    <i class="fa-solid fa-envelope"></i>
-    <span>Contact</span>
-  </a>
-</nav>
+      <a href="courses.html" class="active">
+        <i class="fas fa-book-open"></i>
+        <span>Courses</span>
+      </a>
+      <a href="notes.html">
+        <i class="fas fa-sticky-note"></i>
+        <span>Notes</span>
+      </a>
+      <a href="about-us.html">
+        <i class="fa-solid fa-user"></i>
+        <span>About</span>
+      </a>
+      <a href="contact.html">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+    </nav>
 
     <div class="hamburger" id="menuBtn">
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-</header>
-    <main>
-        <section class="page-header">
-            <h1>Our Courses</h1>
-            <p>Find the perfect course to kickstart your career.</p>
-        </section>
-        
-        <section class="courses-container">
-<div class="course-card">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM2_gzoK8uzH6y59tl1yO3W5HUafIohMLdXOFJAbmKR2niQ7_r3J4BgBu5ZRKQAmKNkok&usqp=CAU" alt="AI Agents Course">
-    <div class="course-content">
-        <h3>🤖 Build AI Agents – Free Certification Program</h3>
-        <p>Join 30,000+ learners building intelligent AI systems that use tools, coordinate, and deploy to production.</p>
-        <div class="course-info">
+  </header>
+
+  <main>
+    <section class="page-header">
+      <h1>Our Courses</h1>
+      <p>Find the perfect course to kickstart your career.</p>
+    </section>
+
+    <section class="courses-container">
+      <div class="course-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM2_gzoK8uzH6y59tl1yO3W5HUafIohMLdXOFJAbmKR2niQ7_r3J4BgBu5ZRKQAmKNkok&usqp=CAU" alt="AI Agents Course">
+        <div class="course-content">
+          <h3>🤖 Build AI Agents – Free Certification</h3>
+          <p>Join 30,000+ learners building intelligent AI systems that use tools, coordinate, and deploy to production.</p>
+          <div class="course-info">
             <span><i class="fas fa-clock"></i> Self-paced</span>
             <span><i class="fas fa-certificate"></i> 100% Free</span>
+          </div>
+          <a href="https://go.readytensor.ai/cert-559-agentic-ai-certification" class="btn">☢️ Enroll Free</a>
         </div>
-        <a href="https://go.readytensor.ai/cert-559-agentic-ai-certification" class="btn">☢️ Enroll Free</a>
-    </div>
-</div>
-          <div class="course-card">
-    <img src="https://pbs.twimg.com/media/G3x_mQTWkAAc65h.jpg" alt="AI/LLM Engineer">
-    <div class="course-content">
-        <h3>AI/LLM Engineer Certification Program 🚀</h3>
-        <p>Master fine-tuning and deploying large language models (LLMs) with real industry tools and hands-on projects.</p>
-        <div class="course-info">
+      </div>
+
+      <div class="course-card">
+        <img src="https://pbs.twimg.com/media/G3x_mQTWkAAc65h.jpg" alt="AI/LLM Engineer">
+        <div class="course-content">
+          <h3>AI/LLM Engineer Certification 🚀</h3>
+          <p>Master fine-tuning and deploying large language models (LLMs) with real industry tools and hands-on projects.</p>
+          <div class="course-info">
             <span><i class="fas fa-clock"></i> 10 Weeks</span>
-            <span><i class="fas fa-chart-line"></i> Intermediate–Advanced</span>
+            <span><i class="fas fa-chart-line"></i> Intermediate</span>
+          </div>
+          <a href="https://go.readytensor.ai/cert-562-llm-engg-certification" class="btn">☢️ Enroll Now</a>
         </div>
-        <a href="https://go.readytensor.ai/cert-562-llm-engg-certification" class="btn">☢️ Enroll Now</a>
+      </div>
+
+      <div class="course-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3vtpruR5jCSYEv1ECuR3M7wcZztBPJSTFtBgzGSkfPXxnA7j13PzhmYaS&s=10" alt="Web Development">
+        <div class="course-content">
+          <h3>Web Development Mastery</h3>
+          <p>From HTML basics to advanced JavaScript frameworks. Become a full-stack developer.</p>
+          <div class="course-info">
+            <span><i class="fas fa-clock"></i> 12 Weeks</span>
+            <span><i class="fas fa-chart-bar"></i> All Levels</span>
+          </div>
+          <a href="https://whatsapp.com/channel/0029VaiSdWu4NVis9yNEE72z" class="btn">☢️ Enroll Now</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzUD2y8mxQWT5N5eec_SVVc6wRsQmLDyxWCOPep0SpSQ&s=10" alt="Data Science">
+        <div class="course-content">
+          <h3>Data Analytics (Python, SQL)</h3>
+          <p>Learn to analyze data, create beautiful visualizations, and use machine learning tools like Power BI.</p>
+          <div class="course-info">
+            <span><i class="fas fa-clock"></i> 16 Weeks</span>
+            <span><i class="fas fa-chart-bar"></i> Intermediate</span>
+          </div>
+          <a href="https://whatsapp.com/channel/0029VaGgzAk72WTmQFERKh02" class="btn">☢️ Enroll Now</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="python.webp" alt="Python Learning">
+        <div class="course-content">
+          <h3>Advanced Python Learning</h3>
+          <p>Deep dive into advanced concepts like OOP, decorators, and multithreading to become industry ready.</p>
+          <div class="course-info">
+            <span><i class="fas fa-clock"></i> 8 Weeks</span>
+            <span><i class="fas fa-chart-bar"></i> Beginner</span>
+          </div>
+          <a href="https://whatsapp.com/channel/0029VaiM08SDuMRaGKd9Wv0L" class="btn">☢️ Enroll Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left"> 
+      <div class="footer-links">
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy-security.html">Privacy & Security</a>
+        <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
+        <a href="about-us.html">About Us</a>    
+      </div>
+      <hr>
+      <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
+      <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
     </div>
-</div>
-            <div class="course-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3vtpruR5jCSYEv1ECuR3M7wcZztBPJSTFtBgzGSkfPXxnA7j13PzhmYaS&s=10" alt="Web Development">
-                <div class="course-content">
-                    <h3>Web Development Mastery</h3>
-                    <p>From HTML basics to advanced JavaScript frameworks. Become a full-stack developer.</p>
-                    <div class="course-info">
-                        <span><i class="fas fa-clock"></i> 12 Weeks</span>
-                        <span><i class="fas fa-chart-bar"></i> All Levels</span>
-                    </div>
-                    <a href="https://whatsapp.com/channel/0029VaiSdWu4NVis9yNEE72z" class="btn">☢️ Enroll Now</a>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzUD2y8mxQWT5N5eec_SVVc6wRsQmLDyxWCOPep0SpSQ&s=10" alt="Data Science">
-                <div class="course-content">
-                    <h3>Data analysts - Sql, Python, Excel, Power BI & Tableau</h3>
-                    <p>Learn to analyze data, create beautiful visualizations, and use machine learning.</p>
-                    <div class="course-info">
-                        <span><i class="fas fa-clock"></i> 16 Weeks</span>
-                        <span><i class="fas fa-chart-bar"></i> Intermediate</span>
-                    </div>
-                    <a href="https://whatsapp.com/channel/0029VaGgzAk72WTmQFERKh02" class="btn">☢️ Enroll Now</a>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="python.webp" alt="UI/UX Design">
-<div class="course-content">
-  <h3>Advanced Python Learning</h3>
-  <p>Deep dive into advanced Python concepts like OOP, decorators, generators, multithreading, data handling, and frameworks to become industry ready.</p>
 
-                    <div class="course-info">
-                        <span><i class="fas fa-clock"></i> 8 Weeks</span>
-                        <span><i class="fas fa-chart-bar"></i> Beginner</span>
-                    </div>
-                    <a href="https://whatsapp.com/channel/0029VaiM08SDuMRaGKd9Wv0L" class="btn">☢️ Enroll Now</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-      <footer class="footer">
-  <div class="footer-left"> 
-    <div class="footer-links">
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="privacy-security.html">Privacy & Security</a>
-      <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
-      <a href="about-us.html">About Us</a>    
+    <div class="footer-right">
+      <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
+      <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
     </div>
-<hr>
-    <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
-    <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato. </strong></p>
-  </div>
+  </footer>
 
-  <div class="footer-right">
-    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
-    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-</footer>
- <script src="toolbar.js"></script>
-    <script src="script.js"></script>
+  <script src="toolbar.js"></script>
+  <script src="script.js"></script>
 </body>
-      </html>
+</html>
