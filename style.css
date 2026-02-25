@@ -1,7 +1,7 @@
 /* --- Google Fonts & Global Styles --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-:root {
+  :root {
     --primary-color: #0077b6;
     --secondary-color: #00b4d8;
     --accent-color: #ffb703;
@@ -10,6 +10,7 @@
     --card-bg: #ffffff;
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
 *{
     margin:0;
     padding:0;
@@ -28,8 +29,6 @@ body {
 body.no-scroll{
     overflow:hidden;
 }
-
-/* --- Header & Navigation --- */
 
 /* ================= HEADER ================= */
 
@@ -298,7 +297,6 @@ nav a:hover span {
         margin-top:30px;
     }
 }
-
 
 
 /* --- Reusable Components --- */
