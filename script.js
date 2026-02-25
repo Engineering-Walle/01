@@ -1,24 +1,12 @@
 
-const progressBar = document.getElementById("progress-bar");
-const percentage = document.getElementById("percentage");
-const preloader = document.getElementById("preloader");
-
-let progress = 0;
-
-const interval = setInterval(() => {
-    progress += Math.random() * 10;
-    if (progress >= 100) {
-        progress = 100;
-        clearInterval(interval);
-    }
-    progressBar.style.width = progress + "%";
-    percentage.textContent = Math.floor(progress) + "%";
-}, 200);
 
 window.addEventListener("load", function () {
-    setTimeout(() => {
+    const preloader = document.getElementById("preloader");
+
+    // Small delay for smoother transition (optional)
+    setTimeout(function () {
         preloader.classList.add("hide");
-    }, 700);
+    }, 500);
 });
 
 // ==== Sidebar Hamburger Toggle ====
