@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us</title>
+<title>About Us - Engineering Walle</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
+/* Scoped styles to .containery so they don't break the header/footer */
 .containery {
   max-width: 900px;
   margin: 30px auto;
@@ -15,12 +16,12 @@
   padding: 60px 30px;
   border-radius: 10px;
 }
-h1 {
+.containery h1 {
   text-align: left;
   color: #0288d1;
   margin-bottom: 20px;
 }
-h2 { 
+.containery h2 { 
   margin-top: 30px; 
   color: #003366;
   border-left: 5px solid #ffbd15b5;
@@ -28,14 +29,21 @@ h2 {
   padding-left: 10px;
   margin-bottom: 10px;
 }
-p { line-height: 1.7; margin-bottom: 15px; }
-a { color: #0288d1; text-decoration: none; }
-a:hover { text-decoration: underline; }
+.containery p { 
+  line-height: 1.7; 
+  margin-bottom: 15px; 
+}
+.containery a { 
+  color: #0288d1; 
+  text-decoration: none; 
+}
+.containery a:hover { 
+  text-decoration: underline; 
+}
 </style>
 </head>
 <body>
 
-  <!-- === Preloader Section === -->
   <div id="preloader">
     <i class="fas fa-tools loader-icon"></i>
     <div class="loading-text">Loading...</div>
@@ -43,36 +51,37 @@ a:hover { text-decoration: underline; }
 <div class="overlay" id="overlay"></div>
 
 <div class="sidebar" id="sidebar">
-
     <a href="index.html" style="--i:1"><i class="fas fa-home"></i> Home</a>
     <a href="courses.html" style="--i:2"><i class="fas fa-book-open"></i> Courses</a>
     <a href="quiz.html" style="--i:3"><i class="fas fa-question-circle"></i> Quiz</a>
     <a href="notes.html" style="--i:4"><i class="fas fa-sticky-note"></i> Notes</a>
-    <a href="contact.html" style="--i:5"><i class="fas fa-envelope"></i> Contact</a>
-
+    <a href="about-us.html" style="--i:5"><i class="fa-solid fa-user"></i> About</a>
+    <a href="contact.html" style="--i:6"><i class="fas fa-envelope"></i> Contact</a>
 </div>
+
 <header>
      <a href="index.html" class="logo" style="color:white;">
     <i class="fas fa-tools" style="color:#ff9d00;"></i> Engineering Walle
   </a>
 
     <nav>
-
-  <a href="courses.html">
-    <i class="fas fa-book-open"></i>
-    <span>Courses</span>
-  </a>
-
-  <a href="notes.html">
-    <i class="fas fa-sticky-note"></i>
-    <span>Notes</span>
-  </a>
-
-  <a href="contact.html">
-    <i class="fa-solid fa-envelope"></i>
-    <span>Contact</span>
-  </a>
-</nav>
+      <a href="courses.html">
+        <i class="fas fa-book-open"></i>
+        <span>Courses</span>
+      </a>
+      <a href="notes.html">
+        <i class="fas fa-sticky-note"></i>
+        <span>Notes</span>
+      </a>
+      <a href="about-us.html">
+        <i class="fa-solid fa-user"></i>
+        <span>About</span>
+      </a>
+      <a href="contact.html">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Contact</span>
+      </a>
+    </nav>
 
     <div class="hamburger" id="menuBtn">
         <span></span>
@@ -80,24 +89,27 @@ a:hover { text-decoration: underline; }
         <span></span>
     </div>
 </header>
-<div class="containery">
-  <h1>About Us</h1>
 
-  <h2>Who We Are</h2>
-  <p><strong>Etech</strong> is an educational platform dedicated to providing quality resources for engineering students. Our mission is to make learning accessible, engaging, and practical for everyone.</p>
+<main>
+  <div class="containery">
+    <h1>About Us</h1>
 
-  <h2>Our Vision</h2>
-  <p>We aim to empower students with knowledge and tools that help them succeed academically and professionally. We focus on creating easy-to-understand content that is aligned with real-world applications.</p>
+    <h2>Who We Are</h2>
+    <p><strong>Engineering Walle</strong> is an educational platform dedicated to providing quality resources for engineering students. Our mission is to make learning accessible, engaging, and practical for everyone.</p>
 
-  <h2>What We Offer</h2>
-  <p>Our website offers courses, quizzes, notes, and practical resources for engineering students. We continuously update our content to ensure it is relevant and helpful.</p>
+    <h2>Our Vision</h2>
+    <p>We aim to empower students with knowledge and tools that help them succeed academically and professionally. We focus on creating easy-to-understand content that is aligned with real-world applications.</p>
 
-  <h2>Our Team</h2>
-  <p>The Etech team consists of passionate educators, developers, and content creators committed to helping students achieve their goals.</p>
+    <h2>What We Offer</h2>
+    <p>Our website offers courses, quizzes, notes, and practical resources for engineering and diploma students. We continuously update our content to ensure it is relevant and helpful.</p>
 
-  <h2>Contact Us</h2>
-  <p>If you have any questions or suggestions, feel free to reach out at: <a href="mailto:info@etech.com">info@etech.com</a></p>
-</div>
+    <h2>Our Team</h2>
+    <p>The Engineering Walle team consists of passionate educators, developers, and content creators committed to helping students achieve their goals.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions or suggestions, feel free to reach out via our <a href="contact.html">Contact Page</a> or join our active community links below.</p>
+  </div>
+</main>
 
 <footer class="footer">
   <div class="footer-left">
@@ -120,6 +132,7 @@ a:hover { text-decoration: underline; }
     <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
   </div>
 </footer>
+
 <script src="toolbar.js"></script>
 <script src="script.js"></script>
 </body>
