@@ -1,27 +1,22 @@
-// ==== Preloader Fix ====
-// We use a self-invoking function or check readyState to ensure it runs even if 'load' event was missed
-function hidePreloader() {
-  const preloader = document.getElementById("preloader");
-  if (preloader) {
-    preloader.style.opacity = "0";
-    preloader.style.visibility = "hidden";
-    
-    // Completely remove from DOM after transition to prevent interaction issues
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 1000); 
-  }
+// Function jo preloader ko hide karegi
+function removePreloader() {
+    const preloader = document.getElementById("preloader");
+    if (preloader && !preloader.classList.contains("hide")) {
+        preloader.classList.add("hide");
+        
+        // DOM se poori tarah hatane ke liye (0.6s CSS transition ke baad)
+        setTimeout(() => {
+            preloader.style.display = "none";
+        }, 600);
+    }
 }
 
-// Trigger hide as soon as window is loaded
-if (document.readyState === "complete") {
-  hidePreloader();
-} else {
-  window.addEventListener("load", hidePreloader);
-}
+// 1. Jaise hi page load ho, preloader hatao
+window.addEventListener("load", removePreloader);
 
-// Fail-safe: Force hide preloader after 5 seconds in case a resource fails to load
-setTimeout(hidePreloader, 5000);
+// 2. Fail-safe: Agar window.load trigger nahi hota (slow network), 
+// toh 5 second baad preloader apne aap hat jayega.
+setTimeout(removePreloader, 5000);
 
 // ==== Sidebar Hamburger Toggle ====
 const menuBtn = document.getElementById("menuBtn");
