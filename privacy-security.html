@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy & Security - Etech</title>
+<title>Privacy & Security | Engineering Walle</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
+/* Scoped styles to prevent interference with global navigation */
 .containery {
   max-width: 900px;
   margin: 30px auto;
@@ -15,12 +16,12 @@
   padding: 60px 30px;
   border-radius: 10px;
 }
-h1 {
+.containery h1 {
   text-align: left;
   color: #0288d1;
   margin-bottom: 20px;
 }
-h2 { 
+.containery h2 { 
   margin-top: 30px; 
   color: #003366;
   border-left: 5px solid #ffbd15b5;
@@ -28,89 +29,98 @@ h2 {
   padding-left: 10px;
   margin-bottom: 10px;
 }
-p { line-height: 1.7; margin-bottom: 15px; }
-a { color: #0288d1; text-decoration: none; }
-a:hover { text-decoration: underline; }
+.containery p { 
+  line-height: 1.7; 
+  margin-bottom: 15px; 
+}
+.containery a { 
+  color: #0288d1; 
+  text-decoration: none; 
+}
+.containery a:hover { 
+  text-decoration: underline; 
+}
 </style>
 </head>
 <body>
 
-  <!-- === Preloader Section === -->
   <div id="preloader">
     <i class="fas fa-tools loader-icon"></i>
     <div class="loading-text">Loading...</div>
   </div>
 
+  <header>
+    <a href="index.html" class="logo" style="color:white;">
+      <i class="fas fa-tools" style="color:#ff9d00;"></i> Engineering Walle 
+    </a>
+    
+    <nav>
+      <a href="courses.html"><i class="fas fa-book-open"></i> <span>Courses</span></a>
+      <a href="notes.html"><i class="fas fa-sticky-note"></i> <span>Notes</span></a>
+      <a href="about-us.html"><i class="fa-solid fa-user"></i> <span>About</span></a>
+      <a href="contact.html"><i class="fa-solid fa-envelope"></i> <span>Contact</span></a>
+    </nav>
 
-<header>
-  <a href="index.html" class="logo" style="color:white;">
-<i class="fas fa-tools" style="color:#ff9d00;"></i> Engineering Walle </a>
-  <!-- Hamburger for Mobile -->
-  <div class="hamburger" id="menu-btn"><span></span><span></span><span></span></div>
-</header>
+    <div class="hamburger" id="menuBtn"><span></span><span></span><span></span></div>
+  </header>
 
-<!-- Overlay -->
-<div class="overlay" id="overlay"></div>
+  <div class="overlay" id="overlay"></div>
 
-<!-- Mobile Sidebar -->
-<aside class="sidebar" id="sidebar">
-  <ul>
-    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="courses.html"><i class="fas fa-book-open"></i> Courses</a></li>
-    <li><a href="quiz.html"><i class="fas fa-question-circle"></i> Quiz</a></li>
-    <li><a href="notes.html"><i class="fas fa-sticky-note"></i> Notes</a></li>
-    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-  </ul>
-</aside>
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" style="--i:1"><i class="fas fa-home"></i> Home</a>
+    <a href="courses.html" style="--i:2"><i class="fas fa-book-open"></i> Courses</a>
+    <a href="quiz.html" style="--i:3"><i class="fas fa-question-circle"></i> Quiz</a>
+    <a href="notes.html" style="--i:4"><i class="fas fa-sticky-note"></i> Notes</a>
+    <a href="about-us.html" style="--i:5"><i class="fa-solid fa-user"></i> About</a>
+    <a href="contact.html" style="--i:6"><i class="fas fa-envelope"></i> Contact</a>
+  </aside>
 
-<div class="containery">
-  <h1>Privacy & Security</h1>
+  <main class="containery">
+    <h1>Privacy & Security</h1>
 
-  <h2>Information Collection</h2>
-  <p>We may collect personal information such as name, email address, and usage data when you interact with our website. This information is used solely to improve your experience.</p>
+    <h2>Information Collection</h2>
+    <p>At <strong>Engineering Walle</strong>, we prioritize your privacy. We may collect personal information such as your name and email address when you subscribe to our newsletter or contact us directly. This data helps us improve your learning experience.</p>
 
-  <h2>Use of Information</h2>
-  <p>Your data is used to provide services, respond to inquiries, send updates, and enhance website functionality. We never sell or rent your personal information to third parties.</p>
+    <h2>Use of Information</h2>
+    <p>Your data is used to provide academic resources, respond to inquiries, and enhance website functionality. We maintain a strict policy of never selling or renting your personal information to third parties.</p>
 
-  <h2>Cookies & Tracking</h2>
-  <p>Our website may use cookies and other tracking technologies to improve user experience, analyze traffic, and provide personalized content.</p>
+    <h2>Cookies & Tracking</h2>
+    <p>We use cookies and basic tracking technologies to analyze site traffic and understand which engineering resources are most helpful to our community. This allows us to improve our content delivery.</p>
 
-  <h2>Data Security</h2>
-  <p>We implement reasonable security measures to protect your personal data. However, no method of transmission over the internet is 100% secure.</p>
+    <h2>Data Security</h2>
+    <p>We implement standard security measures to protect your personal data from unauthorized access. While we strive for maximum protection, please remember that no method of online transmission is 100% secure.</p>
 
-  <h2>Third-Party Services</h2>
-  <p>Our website may contain links to external websites. We are not responsible for their privacy practices or content.</p>
+    <h2>Third-Party Links</h2>
+    <p>Our website contains links to external platforms (like Google Drive for notes or WhatsApp for community groups). We are not responsible for the privacy practices or content of these external sites.</p>
 
-  <h2>Consent</h2>
-  <p>By using this website, you consent to our privacy and security practices as described above.</p>
+    <h2>Consent</h2>
+    <p>By using this website, you consent to our privacy and security practices as outlined on this page.</p>
 
-  <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:info@etech.com">info@etech.com</a></p>
-</div>
+    <h2>Contact Us</h2>
+    <p>If you have questions regarding your data, please contact us at: <a href="mailto:smart420786@gmail.com">smart420786@gmail.com</a></p>
+  </main>
 
-<footer class="footer">
-  <div class="footer-left">
-    <div class="footer-links">
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="privacy-security.html" class="active">Privacy & Security</a>
-      <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
-      <a href="about-us.html">About Us</a>    
+  <footer class="footer">
+    <div class="footer-left">
+      <div class="footer-links">
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy-security.html" class="active">Privacy & Security</a>
+        <a href="https://sumit-mahato-07.github.io/Portfolio/">About Founder</a>
+        <a href="about-us.html">About Us</a>    
+      </div>
+      <hr>
+      <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
+      <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
     </div>
-    <hr>
-    <p>© 2025 <strong>Engineering Walle</strong>. All rights reserved.</p>
-    <p>Made with <i class="fas fa-heart" style="color:red"></i> by <strong>Sumit Kumar Mahato.</strong></p>
-  </div>
 
-  <div class="footer-right">
-    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram" title="Telegram"><i class="fab fa-telegram"></i></a>
-    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-</footer>
+    <div class="footer-right">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://whatsapp.com/channel/0029Vb0ypa2ADTOIICOOlO2n" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://t.me/engineeringwalle_jh" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+    </div>
+  </footer>
 
-<script src="toolbar.js"></script>
-<script src="script.js"></script>
+  <script src="toolbar.js"></script>
+  <script src="script.js"></script>
 </body>
-  </html>
+</html>
