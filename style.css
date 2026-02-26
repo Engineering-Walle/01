@@ -946,8 +946,9 @@ nav a:hover span {
 #preloader {
     position: fixed;
     inset: 0;
-    background: #0f172a; /* dark background */
+    background: black; /* dark background */
     display: flex;
+    padding:50px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -957,7 +958,7 @@ nav a:hover span {
 
 .loader-icon {
     font-size: 2rem;
-    color: #ff7d00;
+    color: #fff;
     animation: spin 1.2s linear infinite;
 }
 
