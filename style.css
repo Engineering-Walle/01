@@ -229,52 +229,106 @@ nav a:hover span {
 }
 
 /* ================= HERO ================= */
+
 .hero{
-  padding:80px;
+  height: calc(100vh - var(--header-height));
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  position:relative;
+  overflow:hidden;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 }
 
-.hero-left{
-  max-width:600px;
+/* Glow effect */
+.hero::before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,rgba(95,111,255,0.4),transparent 70%);
+  top:-200px;
+  right:-200px;
+  filter:blur(80px);
 }
 
-.hero-left h1{
-  font-size:56px;
-  font-weight:800;
+/* Content Box */
+.hero-content{
+  position:relative;
+  max-width:750px;
+  padding:60px 40px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.3);
+  animation:fadeUp 1s ease forwards;
+}
+
+.hero-content h1{
+  font-size:3rem;
+  color:#fff;
   margin-bottom:20px;
+  font-weight:700;
 }
 
-.hero-left p{
-  color:#666;
+.hero-content p{
+  font-size:1.2rem;
+  color:#ddd;
   margin-bottom:30px;
+  line-height:1.6;
 }
 
-.hero-buttons{
-  display:flex;
-  gap:15px;
+/* Button */
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 28px;
+  background:linear-gradient(135deg,#5f6fff,#3c4fff);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:50px;
+  transition:all .3s ease;
+  box-shadow:0 5px 20px rgba(95,111,255,0.5);
 }
 
-.hero-right img{
-  width:420px;
-  border-radius:12px;
+.hero-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px rgba(95,111,255,0.7);
 }
 
-/* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-  header{ padding:20px; }
-  nav{ display:none; }
-  .hamburger{ display:block; }
-  .hero{
-      flex-direction:column;
-      text-align:center;
-      padding:40px 20px;
+.hero-btn i{
+  transition:transform .3s ease;
+}
+
+.hero-btn:hover i{
+  transform:translateX(5px);
+}
+
+/* Animation */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
   }
-  .hero-left h1{ font-size:36px; }
-  .hero-right img{ width:300px; margin-top:30px; }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
+/* Responsive */
+@media(max-width:768px){
+  .hero-content h1{
+    font-size:2.2rem;
+  }
+  .hero-content{
+    padding:40px 25px;
+  }
+}
 /* --- Reusable Components --- */
 .btn {
   display: inline-block;
@@ -307,96 +361,7 @@ nav a:hover span {
   margin-bottom: 0.5rem;
 }
 
-/* ================= HERO SECTION ================= */
 
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  position: relative;
-  overflow: hidden;
-}
-
-/* subtle animated background glow */
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(95,111,255,0.4), transparent 70%);
-  top: -200px;
-  right: -200px;
-  filter: blur(80px);
-}
-
-.hero-content {
-  position: relative;
-  max-width: 700px;
-  padding: 50px 40px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-  animation: fadeUp 1s ease forwards;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  color: #fff;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  color: #ddd;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
-
-/* Stylish Button */
-.hero-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  background: linear-gradient(135deg,#5f6fff,#3c4fff);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(95,111,255,0.5);
-}
-
-.hero-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(95,111,255,0.7);
-}
-
-.hero-btn i {
-  transition: transform 0.3s ease;
-}
-
-.hero-btn:hover i {
-  transform: translateX(5px);
-}
-
-/* Fade animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* --- Banner --- */
 .banner {
   background-color: var(--accent-color);
