@@ -958,6 +958,7 @@ nav a:hover span {
     padding:50px;
     flex-direction: column;
     justify-content: center;
+    max-width:110%;
     align-items: center;
     z-index: 9999;
     transition: opacity 0.6s ease, visibility 0.6s ease;
